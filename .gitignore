@@ -11,8 +11,9 @@
 # production
 /build
 
-# lock file
-yarn.lock*
+# lock files
+yarn.lock
+package-lock.json
 
 # misc
 .DS_Store
