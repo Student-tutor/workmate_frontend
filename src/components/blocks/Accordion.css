@@ -1,0 +1,123 @@
+.accordion {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    padding: 5%;
+    z-index: 0;
+    transition: all .3s linear;
+}
+
+
+
+.accordion .container {
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 30px;
+    padding: 10px;
+    max-width: 95%;
+}
+
+.accordion .wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.wrap {
+    color: var(--Color-1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 95%;
+    margin: auto;
+    height: auto;
+    cursor: pointer;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 15pt;
+}
+
+.dropdown {
+    padding: 0px;
+    color: rgba(179, 113, 33, 0.575);
+    max-width: 95%;
+    height: 0;
+    overflow: hidden;
+    transition: all .3s linear;
+}
+
+
+.dropdown.expand {
+    height: auto;
+    padding: 10px 25px;
+
+}
+
+
+p {
+    margin-top: 10px;
+}
+
+@media (max-width: 900px) {
+    .accordion .container {
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 30px;
+        padding: 20px;
+        width: 100%;
+    }
+
+    .accordion .container {
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.3);
+        border-radius: 30px;
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .accordion .wrapper {
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+    }
+
+    .wrap {
+        color: var(--Color-1);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 100%;
+        margin: auto;
+        height: auto;
+        cursor: pointer;
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 15pt;
+    }
+
+    .dropdown {
+        padding: 0px;
+        color: rgba(179, 113, 33, 0.575);
+        max-width: 95%;
+        height: 0;
+        overflow: hidden;
+        transition: all .3s linear;
+    }
+
+
+    .dropdown.expand {
+        height: auto;
+        padding: 10px 25px;
+
+    }
+
+
+    p {
+        margin-top: 10px;
+    }
+
+    h1 {
+        font-size: 17pt;
+    }
+}

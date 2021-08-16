@@ -1,8 +1,34 @@
+@import url(https://fonts.googleapis.com/css2?family=Caveat:wght@100;200;300;400;500;600;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;800;900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;800;900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Comfortaa:wght@100;200;300;400;500;600;700&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;500;600;800;900&display=swap);
+
+
+
+:root {
+  --Poppins: "Poppins";
+  --Comfortaa: "Comfortaa";
+  --Caveat: "Caveat";
+  --h1: 40px;
+  --h2: 26px;
+  --h3: 20px;
+  --Color-1: rgba(88, 10, 177, 0.953);
+  --Color-2: rgba(246, 142, 6, 0.994);
+  --Color-3: rgba(88, 10, 177, 0.398);
+  --Color-4: rgba(246, 198, 6, 0.83);
+  --Color-5: rgba(2, 200, 235, 0.83);
+  --White: #fff;
+}
+
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -11,3 +37,4 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
