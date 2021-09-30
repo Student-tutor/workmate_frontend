@@ -1,8 +1,11 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 import showcaseImg from '../../../assets/images/heroImage.png'
 import { Home, Img, Showcase, ShowcaseBtn, ShowcaseContainer, ShowcaseContent, ShowcaseImg, ShowcaseText, ShowcaseTitle, Step, Title, Desc, Card, Focus, FocusImg, FocusText, Steps, About, AboutText, AboutCards } from '../../../Styled'
 import focus from '../../../assets/images/focus.png'
 import Accordion from '../../blocks/Accordion'
+import { FaArrowCircleRight, FaAward, FaMarker } from 'react-icons/fa'
+import '../../blocks/Accordion.css'
 // import SubjectSlider from '../../blocks/SubjectSlider'
 
 
@@ -12,15 +15,17 @@ const HomePage = () => {
         <ShowcaseContainer>
           <Showcase>
             <ShowcaseText>
-              <ShowcaseTitle>Your 24/7 homework helper</ShowcaseTitle>
+              <ShowcaseTitle>Your 24/7 Academic Work Helper</ShowcaseTitle>
               <ShowcaseContent>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
-                expedita optio odio. Molestiae reiciendis et neque doloremque
-                quis iure minus?
+                <p className="icon"> <FaArrowCircleRight/> Let millions of your freinds help you with any academic works</p>
+                <p className="icon"> <FaMarker/> Get expert-verified assistance on your work very fast </p>
+                <p className="icon"> <FaAward/> We are trusted by 10 million students across the world </p>
               </ShowcaseContent>
-              <ShowcaseBtn href="" className="btn">
-                Click here
-              </ShowcaseBtn>
+              <NavLink to="/">
+                <ShowcaseBtn className="btn">
+                  Click here
+                </ShowcaseBtn>
+              </NavLink>
             </ShowcaseText>
             <ShowcaseImg>
               <Img src={showcaseImg} alt="" />
@@ -98,7 +103,6 @@ const HomePage = () => {
       </Home>
     );
 }
-
 
 
 export default HomePage

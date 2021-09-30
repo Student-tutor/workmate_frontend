@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 // Sign_In
 
-export const Background = styled.div`
+export const Background = styled.div` 
   width: 100%;
   height: 100vh;
   display: flex;
@@ -11,8 +11,8 @@ export const Background = styled.div`
 `;
 
 export const Box = styled.div`
+margin-bottom: 50%; 
   width: 400px;
-  margin: auto;
   height: auto;
   padding: 2%;
   border-radius: 10px;
@@ -25,11 +25,39 @@ export const Box = styled.div`
 
 export const Form = styled.form``;
 
+export const FormOption = styled.div`
+  .select {
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+}
+  /* appearance: none; */
+  border: none;
+  padding: 0 1em 0 0;
+  margin: 0;
+  width: 100%;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: inherit;
+  line-height: inherit;
+  width: 90%;
+   height: 40px;
+   box-sizing: border-box;
+   margin-bottom: 3vh;
+   outline: none;
+    border-radius: 6px;
+    border: none; 
+  }
+   
+`
+
 export const FormControl = styled.div`
   width: 90%;
   margin-bottom: 3vh;
   &.btn {
     margin-top: 5vh;
+    font-size: 14px; 
   }
 `;
 
@@ -43,7 +71,13 @@ export const Input = styled.input`
   outline: none;
   border-radius: 6px;
   border: none;
-  background: #7527c43f;
+  background: #fff;
+  &.btn {
+    font-size: 18px; 
+    &:hover{
+      background-color: var(--Color-2);
+    }
+  }
 `;
 
 export const Nav = styled.div`
@@ -112,17 +146,32 @@ export const Links = styled.ul`
 export const LinkItem = styled.li`
   display: inline-block;
   margin-left: 20px;
+  margin-bottom: 0px;
   list-style-type: none;
+  font-size: 14pt;
+  img { 
+          border-radius: 50%;
+          height: 50px;
+          width: 50px;
+          transform: translateY(20px);
+         }
 
   a {
     text-decoration: none;
     position: relative;
+    
+    &:hover {
+      font-size: 15pt;
+    box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.3);
+  }
 
     &.btn {
       background-color: var(--Color-2);
       border-radius: 50px;
       padding: 8px 25px;
+      cursor: pointer;
     }
+    
 
     /* &.btn::before {
         content: '';
@@ -529,7 +578,7 @@ export const DashboardCont = styled.div`
   padding: 7% 5%;
   display: grid;
   grid-template-columns: 65% auto;
-  grid-gap: 20px;
+  grid-gap: 70px;
   position: relative;
 `;
 
@@ -537,7 +586,7 @@ export const Cp = styled.div`
   border: 5px solid var(--Color-3);
   padding: 5%;
   border-radius: 20px;
-  width: 100%;
+  width: 90%;
   display: flex;
   align-items: center;
   height: 40vh;
@@ -578,3 +627,76 @@ export const Modal = styled.div`
     display: block;
   }
 `;
+
+// user projects
+export const GetUserProjects = styled.div`
+  border: 5px solid var(--Color-3);
+  padding: 5%;
+  border-radius: 20px;
+  margin-top: -200px; 
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  height: 80vh;
+  position: relative;
+
+  .user-project-title{
+    font-size: var(--h1);
+    margin-bottom: 10px;
+  }
+  .empty-state{
+  text-align: center;
+  margin: auto;
+}
+`;
+export const ProjectCont = styled.div`
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+justify-content: space-around;
+
+
+
+`
+
+export const AfterSignIn = styled.div`
+  a {
+      text-decoration: none;
+      position: relative;
+      color: var(--c);
+    }
+
+  &.btn {
+    background-color: var(--Color-2);
+    border-radius: 50px;
+    padding: 8px 25px;
+    cursor: pointer;
+    }
+`
+  export const ProfileStyle = styled.div`
+  border: 5px solid var(--Color-3);
+  padding: 3%;
+  border-radius: 20px;
+  width: 85%;
+  height: 80vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  img { 
+          border-radius: 50%;
+          height: 70px;
+          width: 70px;
+         }
+
+  p {
+    position: relative;
+    font-size: 14pt;
+    font-weight: 600;
+    margin-bottom: 30px; 
+  }
+    
+  `

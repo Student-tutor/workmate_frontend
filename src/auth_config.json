@@ -1,0 +1,7 @@
+{
+  "domain": "dev-kvcpj-so.us.auth0.com",
+  "clientId": "qsS6nn254sVoZvGUshtuYNPwY17jV0o2",
+  "audience": "https://dev-kvcpj-so.us.auth0.com/api/v2/",
+  "scope": "read:projects create:projects update:projects delete:projects",
+  "issuer": "https://dev-kvcpj-so.us.auth0.com/"
+}

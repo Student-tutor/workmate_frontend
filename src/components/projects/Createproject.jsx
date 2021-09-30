@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Cp, Modal, Title } from "../../Styled";
-import Form from "./Form";
+import ProjectForm from "./Form";
 
 
 const Createproject = () => {
@@ -8,19 +8,20 @@ const Createproject = () => {
   const openModal = () => {
     setModal(!modal);
   };
+
   return (
     <Cp>
       <div>
-        <Title className="title">What do you need to know?</Title>
+        <Title className="title">What do you want to work on?</Title>
         <button className="btn" onClick={openModal}>
-          ASK YOUR QUESTION
+          MEET EXPERT
         </button>
 
         <Modal className={modal ? "active" : ""}>
           <button className="close" onClick={openModal}>
-            x
+            X
           </button>
-          <Form />
+          <ProjectForm />
         </Modal>
       </div>
     </Cp>
