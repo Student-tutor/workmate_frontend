@@ -1,10 +1,17 @@
 import styled from "styled-components";
 
-// Sign_In
-
+// Form
 export const Background = styled.div` 
   width: 100%;
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+export const FormBackground = styled.div` 
+  width: 100%;
+  height: 100vh;
+  margin-top: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -650,15 +657,30 @@ export const GetUserProjects = styled.div`
   text-align: center;
   margin: auto;
 }
+
+.project-header {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  p{
+    margin-left: 25px;
+  font-weight: 900;
+  color: var(--Color-3);
+  }
+  
+}
 `;
 export const ProjectCont = styled.div`
 display: flex;
-flex-direction: column;
+flex-direction: row;
 align-items: flex-start;
-justify-content: space-around;
+justify-content: space-evenly;
 
 
-
+p{
+  margin-left: 42px;
+}
 `
 
 export const AfterSignIn = styled.div`
@@ -699,4 +721,36 @@ export const AfterSignIn = styled.div`
     margin-bottom: 30px; 
   }
     
+  `
+
+  // Admin
+
+  export const AdminStyle = styled.div`
+  border: 5px solid var(--Color-3);
+  margin-top: 8%;
+  margin-left: 3%;
+  padding: 3%;
+  border-radius: 20px;
+  width: 85%;
+  height: 80vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  
+    .project-header {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    margin-left: 25px;
+    font-weight: 900;
+    color: var(--Color-3);
+  }
+    h4{
+      margin-left: 20px;
+      font-weight: 900;
+    }
+  
   `

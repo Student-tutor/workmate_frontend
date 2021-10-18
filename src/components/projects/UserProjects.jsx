@@ -4,6 +4,14 @@ import emptyState from "../../assets/images/empty_state_home_activity.svg"
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 
+const style = { 
+  width: "14rem"
+};
+
+const search = {
+   height: "60px" 
+}
+
 const UserProjects = () => {
   const [projects, setProjects] = useState([])
 
@@ -15,56 +23,65 @@ const UserProjects = () => {
     user 
   } = useAuth0();
 
+  useEffect(() => {
+    userProjects()
+  }, [])
+
   const userProjects = async () => {
     try {
       const token = await getAccessTokenSilently();
       console.log(token)
       await axios.get(
-        `${serverUrl}/projects/`,
+        `${serverUrl}/projects/user`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }).then(response => {
-          setProjects(response.data.projects)
-         console.log(response.data.projects.title)
-         console.log(response.data.projects.content)
-       
+        }).then((response) => {
+          const data = response.data.projects;
+          setProjects(data)
+         console.log(data)
+         console.log(typeof data)
+         console.log(data.userId)
         })
-    // const responseData = await response.json();
-        // console.log(responseData)
       
     } catch (error) {
       console.log(error)
     }  
   };
 
-useEffect(() => {
-  userProjects()
-}, [])
 
   return (
+
     <GetUserProjects>
       <div className="user-project-title">
         Your Projects
       </div>
-      {/* <code>
-          {projects && JSON.stringify(projects, null, 4)}
-        </code> */}
+      <div className="project-header">
+              <p>Project Title</p>
+              <p>Type of the Project</p>
+              <p>Pages</p>
+              <p>Date of Submission</p>
+              <p>Payment</p>
+      </div>
+    {projects.length > 0 ? 
+                    projects.map((project, i) => {                        
+            return (
+              <ProjectCont key={project._id.toString()} >
+                <p>{project.title}</p>
+                <p>{project.type}</p>
+                <p>{project.pages}</p>
+                <p>{project.submissionDate}</p>
+                <button>Click to pay</button>
+              </ProjectCont>    
+            )}                       
+         ) : 
+         <div className="empty-state">
+              <img src={emptyState}/> 
+              <p>This is where you'll see your activity and Projects </p> 
+          </div>
+         } 
 
-      {projects ? projects.map(project => {
-        <ProjectCont key={project.id}>
-          <h3>{project.title}</h3>
-          <p>{project.type}</p>
-          <p>{project.pages}</p>
-          <p>{project.submissionDate}</p>
-        </ProjectCont>
-      }) : 
-      <div className="empty-state">
-        <img src={emptyState}/> 
-            <p>This is where you'll see your activity and Projects </p> 
-        </div>
-      }
     </GetUserProjects>
   );
 };

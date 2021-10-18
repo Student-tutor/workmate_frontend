@@ -82,6 +82,7 @@ import {
                             <option> Data Analyses </option>
                             <option> Technical/Article writing </option>
                             <option> Programming </option>
+                            <option> Others </option>
                       </select>
                     </FormOption>
                      <FormControl>

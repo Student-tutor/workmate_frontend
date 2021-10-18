@@ -11,6 +11,8 @@ import Projects from './components/projects/Projects'
 import Loading from './components/layout/Loading'
 import ProtectedRoute from './components/layout/ProtectedRoutes'
 import ExternalApi from './components/pages/ExternalApi'
+import Admin from './components/pages/Admin/Admin'
+import ContactUs from './components/pages/Contact/ContactForm'
 
 
 function App() {
@@ -34,8 +36,10 @@ function App() {
         <Route exact path='/signin' component={SignIn}/>
         <Route exact path='/mentors' component={Mentors}/>
         <ProtectedRoute exact path='/Dashboard' component={Dashboard}/>
-        <ProtectedRoute  exact path='/projects' component={Projects}/>
-        <Route exact path='/external' component={ExternalApi} />
+        {/* <ProtectedRoute  exact path='/projects' component={Projects}/> */}
+        <ProtectedRoute  exact path='/admin' component={Admin}/>
+        {/* <Route exact path='/external' component={ExternalApi} /> */}
+        <Route exact path='/contact-us' component={ContactUs} />
       </Switch>
       
     </div>
