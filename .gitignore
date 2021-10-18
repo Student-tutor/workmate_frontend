@@ -11,8 +11,7 @@
 # production
 /build
 
-# lock files
-/yarn.lock
+# lock file
 /package-lock.json
 
 # misc
