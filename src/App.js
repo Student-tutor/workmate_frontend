@@ -36,12 +36,9 @@ function App() {
         <Route exact path='/signin' component={SignIn}/>
         <Route exact path='/mentors' component={Mentors}/>
         <ProtectedRoute exact path='/Dashboard' component={Dashboard}/>
-        {/* <ProtectedRoute  exact path='/projects' component={Projects}/> */}
         <ProtectedRoute  exact path='/admin' component={Admin}/>
-        {/* <Route exact path='/external' component={ExternalApi} /> */}
         <Route exact path='/contact-us' component={ContactUs} />
       </Switch>
-      
     </div>
     </Router>
   );
