@@ -15,11 +15,11 @@ const Profile = () => {
             alt="Profile"
           />
           <p>{name}</p>
-          <LinkItem>
-          <NavLink to=""  className="btn">
+        
+          <NavLink to=""  className="cta">
             Ask your Question
           </NavLink>
-          </LinkItem>
+          
     </ProfileStyle>
   );
 };
