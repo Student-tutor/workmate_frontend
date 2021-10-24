@@ -1,36 +1,50 @@
 import styled from "styled-components";
 
 // Form
-export const Background = styled.div` 
+export const Background = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 `;
-export const FormBackground = styled.div` 
+export const FormBackground = styled.div`
   width: 100%;
   height: 100vh;
   margin-top: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 999;
+
 `;
 
 export const Box = styled.div`
-margin-bottom: 50%; 
-  width: 400px;
+  width: 100%;
   height: auto;
   padding: 2%;
   border-radius: 10px;
+  background: #ffffff;
+  z-index: 999;
+  position: relative;
   box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.3);
 
   @media (max-width: 900px) {
-    width: 80%;
+    width: 90%;
   }
 `;
 
-export const Form = styled.form``;
+export const Form = styled.form`
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 30px;
+  margin-top: 15vh;
+  @media (max-width: 900px) {
+    grid-gap: 20px;
+    margin-top: 8vh;
+    padding: 10px;
+  }
+`;
 
 export const FormOption = styled.div`
   .select {
@@ -38,38 +52,55 @@ export const FormOption = styled.div`
     *::before,
     *::after {
       box-sizing: border-box;
-}
-  /* appearance: none; */
-  border: none;
-  padding: 0 1em 0 0;
-  margin: 0;
-  width: 100%;
-  font-family: inherit;
-  font-size: inherit;
-  cursor: inherit;
-  line-height: inherit;
-  width: 90%;
-   height: 40px;
-   box-sizing: border-box;
-   margin-bottom: 3vh;
-   outline: none;
+    }
+    /* appearance: none; */
+    border: none;
+    padding: 0 1em 0 0;
+    margin: 0;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    width: 90%;
+    height: 40px;
+    box-sizing: border-box;
+    margin-bottom: 3vh;
+    outline: none;
     border-radius: 6px;
-    border: none; 
+    border: none;
   }
-   
-`
+`;
 
 export const FormControl = styled.div`
-  width: 90%;
-  margin-bottom: 3vh;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+  align-items: center;
   &.btn {
     margin-top: 5vh;
-    font-size: 14px; 
+    font-size: 14px;
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 20px;
   }
 `;
 
 export const InputField = styled.div`
   width: 100%;
+
+  .input {
+    min-width: 100%;
+  }
+
+  .select {
+    border-bottom: 1px solid #616161;
+    border-radius: 0;
+    padding: 20px 0;
+    min-width: 100%;
+  }
 `;
 
 export const Input = styled.input`
@@ -80,8 +111,8 @@ export const Input = styled.input`
   border: none;
   background: #fff;
   &.btn {
-    font-size: 18px; 
-    &:hover{
+    font-size: 18px;
+    &:hover {
       background-color: var(--Color-2);
     }
   }
@@ -91,7 +122,7 @@ export const Nav = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 12vh;
+  height: 15vh;
   position: fixed;
   top: 0;
   left: 0;
@@ -102,7 +133,7 @@ export const Nav = styled.div`
 
   &.active {
     background: var(--Color-1);
-    height: 10vh;
+    height: 15vh;
 
     .toggle {
       color: #fff;
@@ -136,6 +167,8 @@ export const Toggle = styled.div`
 `;
 
 export const Links = styled.ul`
+height: 100%;
+
   @media (max-width: 900px) {
     width: auto;
     box-shadow: 0 1px 2px 5px rgba(0, 0, 0, 0.04);
@@ -152,25 +185,40 @@ export const Links = styled.ul`
 
 export const LinkItem = styled.li`
   display: inline-block;
-  margin-left: 20px;
+  margin-left: 40px;
   margin-bottom: 0px;
   list-style-type: none;
   font-size: 14pt;
-  img { 
-          border-radius: 50%;
-          height: 50px;
-          width: 50px;
-          transform: translateY(20px);
-         }
+  img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    transform: translateY(20px);
+  }
+
+  .prof_image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    object-fit: cover;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
 
   a {
     text-decoration: none;
     position: relative;
-    
-    &:hover {
+
+    /* &:hover {
       font-size: 15pt;
-    box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.3);
-  }
+      box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.3);
+    } */
 
     &.btn {
       background-color: var(--Color-2);
@@ -178,7 +226,6 @@ export const LinkItem = styled.li`
       padding: 8px 25px;
       cursor: pointer;
     }
-    
 
     /* &.btn::before {
         content: '';
@@ -211,9 +258,9 @@ export const Showcase = styled.section`
   grid-template-columns: auto 40%;
   grid-gap: 5%;
   align-items: center;
-  height: 70vh;
+  height: 90vh;
   background: var(--Color-5);
-  padding: 2% 5%;
+  padding: 15vh  5%  5vh;
   padding-top: 15vh;
 
   @media (max-width: 900px) {
@@ -582,22 +629,40 @@ export const BannerImg = styled.div`
 // Dashboard
 
 export const DashboardCont = styled.div`
-  padding: 7% 5%;
+  padding: 15vh  5%  3vh;
+  margin-top: 13vh;
   display: grid;
-  grid-template-columns: 65% auto;
-  grid-gap: 70px;
-  position: relative;
+  grid-template-columns: repeat(1, 1fr);
+  grid-gap: 30px;
+
+  @media (max-width: 900px) {
+  }
 `;
 
 export const Cp = styled.div`
   border: 5px solid var(--Color-3);
-  padding: 5%;
+  padding: 30px;
   border-radius: 20px;
-  width: 90%;
+  width: 100%;
   display: flex;
   align-items: center;
-  height: 40vh;
+  height: 100%;
   position: relative;
+
+  .btn {
+    outline: none;
+    border: none;
+    background: var(--Color-1);
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 50px;
+  }
+
+  @media (max-width: 900px) {
+    .title {
+      font-size: 20px;
+    }
+  }
 `;
 
 export const Modal = styled.div`
@@ -605,16 +670,35 @@ export const Modal = styled.div`
   position: fixed;
   top: 10%;
   left: 10%;
+
   right: 10%;
   bottom: 10%;
-  z-index: 5;
-  width: 500px;
-  height: 500px;
-  background: #fff;
-  padding: 5%;
+  margin: auto;
+  z-index: 999;
+  width: 70%;
+  height: 50%;
+  @media (max-width: 600px) {
+    top: 1%;
+    left: 1%;
+
+    right: 1%;
+    bottom: 1%;
+    width: 100%;
+  }
 
   .close {
-    float: right;
+    position: absolute;
+    top: 3%;
+    right: 3%;
+    font-size: 20px;
+    z-index: 999;
+    outline: none;
+    background: none;
+    border: none;
+    @media (max-width: 900px) {
+top: 3%;
+right: 3%;
+    }
   }
 
   &::before {
@@ -637,95 +721,164 @@ export const Modal = styled.div`
 
 // user projects
 export const GetUserProjects = styled.div`
-  border: 5px solid var(--Color-3);
+  /* border: 5px solid var(--Color-3);
   padding: 5%;
   border-radius: 20px;
-  margin-top: -200px; 
-  width: 90%;
+
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  height: 80vh;
+  height: auto;
   position: relative;
 
-  .user-project-title{
+  .user-project-title {
     font-size: var(--h1);
     margin-bottom: 10px;
   }
-  .empty-state{
-  text-align: center;
-  margin: auto;
-}
+  .empty-state {
+    text-align: center;
+    margin: auto;
 
-.project-header {
+    img {
+      opacity: 0.2;
+    }
+  }
+
+  .project-header {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 50px;
+    @media (max-width: 900px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    p {
+      font-weight: 900;
+      color: var(--Color-3);
+    }
+  } */
+
+  border: 5px solid var(--Color-3);
+  padding: 10px;
+  border-radius: 20px !important;
+  overflow: auto;
+
+  .table {
+    width: 100%;
+    width: 100%;
+  }
+
+  button {
+    background: var(--Color-1);
+    color: #fff;
+    padding: 6px 14px;
+    font-size: 10px;
+    text-decoration: none;
+    border-radius: 50px;
+    outline: none;
+    border: none;
+  }
+
+  .empty-state {
+    text-align: center;
+    margin: auto;
+
+    img {
+      opacity: 0.2;
+    }
+  }
+
+  @media (max-width: 900px) {
+  }
+`;
+export const ProjectCont = styled.div`
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  justify-content: space-around;
-  p{
-    margin-left: 25px;
-  font-weight: 900;
-  color: var(--Color-3);
+  justify-content: space-evenly;
+
+  p {
+    margin-left: 42px;
   }
-  
-}
 `;
-export const ProjectCont = styled.div`
-display: flex;
-flex-direction: row;
-align-items: flex-start;
-justify-content: space-evenly;
-
-
-p{
-  margin-left: 42px;
-}
-`
 
 export const AfterSignIn = styled.div`
   a {
-      text-decoration: none;
-      position: relative;
-      color: var(--c);
-    }
+    text-decoration: none;
+    position: relative;
+    color: var(--c);
+  }
 
   &.btn {
     background-color: var(--Color-2);
     border-radius: 50px;
     padding: 8px 25px;
     cursor: pointer;
-    }
-`
-  export const ProfileStyle = styled.div`
+  }
+`;
+export const ProfileStyle = styled.div`
   border: 5px solid var(--Color-3);
-  padding: 3%;
+  padding: 30px;
   border-radius: 20px;
-  width: 85%;
-  height: 80vh;
+  width: 100%;
+  height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  img { 
-          border-radius: 50%;
-          height: 70px;
-          width: 70px;
-         }
+  img {
+    border-radius: 50%;
+    height: 70px;
+    width: 70px;
+  }
 
   p {
     position: relative;
     font-size: 14pt;
     font-weight: 600;
-    margin-bottom: 30px; 
+    margin-bottom: 30px;
   }
-    
-  `
+  .cta {
+    background: var(--Color-1);
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    text-decoration: none;
+    border-radius: 50px;
+  }
 
-  // Admin
+  @media (max-width: 900px) {
+    font-size: 20px;
+    display: none;
 
-  export const AdminStyle = styled.div`
+    img {
+      border-radius: 50%;
+      height: 40px;
+      width: 40px;
+    }
+
+    p {
+      position: relative;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 30px;
+    }
+    .cta {
+      background: var(--Color-1);
+      color: #fff;
+      padding: 6px 12px;
+      font-size: 10px;
+      text-decoration: none;
+      border-radius: 50px;
+    }
+  }
+`;
+
+// Admin
+
+export const AdminStyle = styled.div`
   border: 5px solid var(--Color-3);
   margin-top: 8%;
   margin-left: 3%;
@@ -738,8 +891,8 @@ export const AfterSignIn = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
-  
-    .project-header {
+
+  .project-header {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -748,9 +901,8 @@ export const AfterSignIn = styled.div`
     font-weight: 900;
     color: var(--Color-3);
   }
-    h4{
-      margin-left: 20px;
-      font-weight: 900;
-    }
-  
-  `
+  h4 {
+    margin-left: 20px;
+    font-weight: 900;
+  }
+`;

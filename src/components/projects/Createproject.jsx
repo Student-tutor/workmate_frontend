@@ -18,10 +18,8 @@ const Createproject = () => {
         </button>
 
         <Modal className={modal ? "active" : ""}>
-          <button className="close" onClick={openModal}>
-            X
-          </button>
-          <ProjectForm />
+          
+          <ProjectForm openModal={openModal} />
         </Modal>
       </div>
     </Cp>
