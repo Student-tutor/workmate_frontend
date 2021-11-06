@@ -117,8 +117,8 @@ const SignedInLinks = ({ toggle }) => {
 };
 
 const UserImage = styled.img`
-margin-top: -30px;
-margin-left: -25px;
+margin-top: -25px;
+margin-left: 10px;
 width: 45px;
 height: 45px;
 border-radius: 50%;

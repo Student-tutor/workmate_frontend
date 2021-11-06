@@ -88,7 +88,7 @@ const LinkItem = styled.li`
 
   @media (max-width: 900px) {
 a {
-  color: #fff;
+  color:black;
 }
 
     display: block;

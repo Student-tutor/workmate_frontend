@@ -24,7 +24,7 @@ import PieChartIcon from '@mui/icons-material/PieChart';
 
 
 const HomePage = () => {
-  const { loginWithRedirect } = useAuth0();
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
 
     return (
       <Home>
@@ -36,16 +36,18 @@ const HomePage = () => {
                 <p className="icon"> <FaArrowCircleRight/> Let your friend help you with any academic and professional works</p>
                 <p className="icon"> <FaMarker/> Get expert-verified assistance on your work very fast </p>
                 <p className="icon"> <FaAward/> We are trusted by thousands of students and professionals across the world </p>
-              </ShowcaseContent>
-                <ShowcaseBtn className="btn"
-                    onClick={() =>
-                      loginWithRedirect({
-                        screen_hint: "signup",
-                      })
-                    } >
-                      Click here
-            </ShowcaseBtn>
-            </ShowcaseText>
+                  </ShowcaseContent>
+                  {!isAuthenticated &&
+                    <ShowcaseBtn className="btn"
+                        onClick={() =>
+                          loginWithRedirect({
+                            screen_hint: "signup",
+                          })
+                        } >
+                          Click here
+                </ShowcaseBtn>
+                   }
+                </ShowcaseText>
             <ShowcaseImg>
               <Img src={showcaseImg} alt="" />
             </ShowcaseImg>

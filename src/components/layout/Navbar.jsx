@@ -64,7 +64,7 @@ const Nav = styled.div`
   transition: all .5s;
 
   a {
-    color: #413e3e;
+    color: white;
     text-decoration: none;
   }
 
@@ -88,7 +88,7 @@ const Toggle = styled.div`
 
   @media (max-width: 900px) {
     display: block;
-    transition: all 2s;
+    transition: all 2s;    
   }
 `;
 

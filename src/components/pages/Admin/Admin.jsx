@@ -1,12 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from 'react-router-dom';
-import { useAuth0 } from "@auth0/auth0-react";
-import {AdminStyle, LinkItem, GetUserProjects, ProjectCont} from  '../../../Styled';
+import {AdminStyle, Modal, LinkItem} from  '../../../Styled';
+
+import SimpleDateTime  from 'react-simple-timestamp-to-date';
 import emptyState from "../../../assets/images/empty_state_home_activity.svg"
+import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
+import AdminForm from "../Admin/AdminForm";
+
+// mui
+import Table from '@mui/material/Table';
+import TableBody from '@mui/material/TableBody';
+import TableCell from '@mui/material/TableCell';
+import TableHead from '@mui/material/TableHead';
+import TableRow from '@mui/material/TableRow';
+
 
 const Admin = () => {
   const [projects, setProjects] = useState([])
+  const [modal, setModal] = useState(false);
  
   const {
     getAccessTokenSilently,
@@ -15,6 +27,9 @@ const Admin = () => {
     user 
   } = useAuth0();
 
+  const openModal = () => {
+    setModal(!modal);
+  };
   const { name, picture, email } = user;
   const serverUrl = process.env.REACT_APP_SERVER_URL;
 
@@ -54,31 +69,77 @@ const Admin = () => {
             Below are the projects and other activities on this site
           </div>
           </div>
-            <div className="project-header">
-                    <h4>Project Title</h4>
-                    <h4>Type of the Project</h4>
-                    <h4>Pages</h4>
-                    <h4>Date of Submission</h4>
-                    <h4>Payment</h4>
-            </div>
-            {projects.length > 0 ? 
-                            projects.map((project, i) => {                        
-                    return (
-                    <ProjectCont key={project._id.toString()} >
-                        <p>{project.title}</p>
-                        <p>{project.type}</p>
-                        <p>{project.pages}</p>
-                        <p>{project.submissionDate}</p>
-                        <button>Click to pay</button>
-                    </ProjectCont>    
-                    )}                       
-                ) : 
-                <div className="empty-state">
-                    <img src={emptyState}/> 
-                    <p>This is where you'll see your activity and Projects </p> 
-                </div>
-                } 
 
+            <Table
+          sx={{ minWidth: 650 }}
+          aria-label="simple table"
+          className="table"
+        >
+          <TableHead className="table_head">
+            <TableRow className="table_head_row">
+              <TableCell >
+                Title
+              </TableCell>
+              <TableCell align="right">
+                Type
+              </TableCell>
+              <TableCell align="right">Pages</TableCell>
+              <TableCell align="right">Submission Date</TableCell>
+              <TableCell align="center">Payment</TableCell>
+            </TableRow>
+          </TableHead>
+          <TableBody classNmae="table_body">
+            {projects.length > 0 ? (
+              projects.map((project, i) => {
+                return (
+                  <TableRow key={project._id.toString()} className="table_row">
+                    <TableCell component="th" scope="row">
+                      {project.title}
+                    </TableCell>
+                    <TableCell component="th" scope="row" align="right">
+                      {project.type}
+                    </TableCell>
+                    {/* <TableCell component="th" align="right"></TableCell> */}
+                    <TableCell align="right">{project.pages}</TableCell>
+                    <TableCell align="right">
+                    <SimpleDateTime 
+                        dateFormat="DMY" 
+                        dateSeparator="/"  
+                        timeSeparator=":"
+                        showTime="0"
+                        >
+                          {project.submissionDate}
+                    </SimpleDateTime>
+                    </TableCell>
+                  {project.isPaid == false ? 
+                  <div>
+                    <TableCell align="right">
+                      <button className="pay-button" onClick={openModal}>Pay</button>
+                    </TableCell>
+                    <Modal className={modal ? "active" : ""}>
+                        
+                        <AdminForm openModal={openModal} />
+                      </Modal>
+                    </div>
+                    :
+                    <div>
+                    <TableCell  align="right">
+                       <button className="paid-button">Paid</button>
+                     </TableCell>
+                     </div>
+                    }
+                  </TableRow>
+                );
+              })
+            ) : (
+              <div className="empty-state">
+                <img src={emptyState} />
+                <p>This is where you'll see your activity and Projects </p>
+              </div>
+              
+            )}
+          </TableBody>
+        </Table>
     </AdminStyle>
   );
 };

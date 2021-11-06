@@ -780,6 +780,15 @@ export const GetUserProjects = styled.div`
     border: none;
   }
 
+  .paid-button{
+    background: green;
+    margin-left: 30px !important;
+  }
+
+  .pay-button{
+    margin-left: 30px !important;
+  }
+
   .empty-state {
     text-align: center;
     margin: auto;

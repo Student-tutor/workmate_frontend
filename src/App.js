@@ -6,7 +6,7 @@ import SignIn from "./components/auth/SignIn"
 import Dashboard from "./components/dashboard/Dashboard";
 import Navbar from "./components/layout/Navbar";
 import HomePage from "./components/pages/Home/HomePage";
-import AboutUs from "./components/pages/mentors/AboutUs";
+import AboutUs from "./components/pages/About/AboutUs";
 import Projects from './components/projects/Projects'
 import Loading from './components/layout/Loading'
 import ProtectedRoute from './components/layout/ProtectedRoutes'

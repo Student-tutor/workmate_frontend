@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import SimpleDateTime  from 'react-simple-timestamp-to-date';
 import {
   GetUserProjects, Cp, Modal, Title
   // ProjectCont,
@@ -96,8 +97,8 @@ const UserProjects = (props) => {
                 Type
               </TableCell>
               <TableCell align="right">Pages</TableCell>
-              <TableCell align="right">Submission</TableCell>
-              <TableCell align="right">Payment</TableCell>
+              <TableCell align="right">Submission Date</TableCell>
+              <TableCell align="center">Payment</TableCell>
             </TableRow>
           </TableHead>
           <TableBody classNmae="table_body">
@@ -111,15 +112,22 @@ const UserProjects = (props) => {
                     <TableCell component="th" scope="row" align="right">
                       {project.type}
                     </TableCell>
-                    <TableCell align="right"></TableCell>
+                    {/* <TableCell component="th" align="right"></TableCell> */}
                     <TableCell align="right">{project.pages}</TableCell>
                     <TableCell align="right">
-                      {project.submissionDate}
+                    <SimpleDateTime 
+                        dateFormat="DMY" 
+                        dateSeparator="/"  
+                        timeSeparator=":"
+                        showTime="0"
+                        >
+                          {project.submissionDate}
+                    </SimpleDateTime>
                     </TableCell>
                   {project.isPaid == false ? 
                   <div>
                     <TableCell align="right">
-                      <button onClick={openModal}>Pay</button>
+                      <button className="pay-button" onClick={openModal}>Pay</button>
                     </TableCell>
                     <Modal className={modal ? "active" : ""}>
                         
@@ -128,8 +136,8 @@ const UserProjects = (props) => {
                     </div>
                     :
                     <div>
-                    <TableCell align="right">
-                       <button>Paid</button>
+                    <TableCell  align="right">
+                       <button className="paid-button">Paid</button>
                      </TableCell>
                      </div>
                     }
