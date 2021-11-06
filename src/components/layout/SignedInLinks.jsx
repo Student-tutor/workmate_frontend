@@ -38,6 +38,9 @@ const SignedInLinks = ({ toggle }) => {
         <NavLink to="/">Home</NavLink>
       </LinkItem>
       <LinkItem>
+        <NavLink to="/about-us">About Us</NavLink>
+      </LinkItem>
+      <LinkItem>
         <NavLink to="/contact-us">Contact Us</NavLink>
       </LinkItem>
       <LinkItem>
@@ -117,12 +120,17 @@ const SignedInLinks = ({ toggle }) => {
 };
 
 const UserImage = styled.img`
-margin-top: -25px;
-margin-left: 10px;
+margin-top: -28px;
+margin-left: -15px;
 width: 45px;
 height: 45px;
 border-radius: 50%;
 position: absolute;
+@media (max-width: 900px) {
+  margin-top: -10px;
+  margin-left: 10px;
+  }
+
 `
 const Links = styled.ul`
   @media (max-width: 900px) {
