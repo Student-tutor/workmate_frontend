@@ -32,7 +32,8 @@ import wedo from "../../../assets/images/we_do.jpg";
 import { Link } from "react-router-dom";
 
 const About = () => {
-  const { loginWithRedirect } = useAuth0();
+  const { loginWithRedirect, isAuthenticated  } = useAuth0();
+
 
   return (
     <div>
@@ -47,6 +48,7 @@ const About = () => {
             <ShowcaseContent>
               Allowing you to focus on what really matters!
             </ShowcaseContent>
+            {!isAuthenticated &&
             <ShowcaseBtn className="btn"
             onClick={() =>
               loginWithRedirect({
@@ -55,6 +57,7 @@ const About = () => {
              } >
               Join Us Today!
             </ShowcaseBtn>
+            }
           </ShowcaseText>
           <ShowcaseImg>
             <Img src={showcase2} alt="" />
@@ -129,6 +132,7 @@ const About = () => {
           <Desc className="desc">
                   
           </Desc>
+          {!isAuthenticated &&
           <Link to="" className="btn"
            onClick={() =>
             loginWithRedirect({
@@ -138,6 +142,7 @@ const About = () => {
           >
             Get your account
           </Link>
+          }
         </BannerText>
 
         <BannerImg>
