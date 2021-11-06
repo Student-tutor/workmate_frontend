@@ -782,7 +782,7 @@ export const GetUserProjects = styled.div`
 
   .paid-button{
     background: green;
-    margin-left: 30px !important;
+    /* margin-left: 80px !important; */
   }
 
   .pay-button{
