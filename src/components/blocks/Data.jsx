@@ -1,24 +1,24 @@
 export const Data = [
     {
-        question: 'Question 1',
-        answer: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, minus!'
+        question: 'How do Workmate works?',
+        answer: "Join and talk to expert with the kind of help you need. It's as easy as that."
     },
     
     {
-        question: 'Question 2',
-        answer: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, minus!'
+        question: 'How soon do I get response?',
+        answer: " We are 24 hours, 7 days a week operational"
     },
     {
-        question: 'Question 3',
-        answer: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, minus!'
+        question: 'How original are the research and writing services?',
+        answer: "Our works are done and vet by experts who happens to be your friends. We conduct plagiarism check. "
     },
     {
-        question: 'Question 4',
-        answer: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, minus!'
+        question: 'Can you guide me on my research work?',
+        answer: "Yes, We can guide you on your research to make it the best it can be"
     },
     {
-        question: 'Question 5',
-        answer: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti, minus!'
+        question: 'Can I get programming related help?',
+        answer: "We have team of Programmers who would help you with any kind of software problem you might have"
     },
 
 ]

@@ -14,6 +14,7 @@ import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 import Tooltip from "@mui/material/Tooltip";
 import styled from "styled-components";
+// import { Logo } from "../../Styled";
 //
 
 const SignedInLinks = ({ toggle }) => {
@@ -37,7 +38,7 @@ const SignedInLinks = ({ toggle }) => {
         <NavLink to="/">Home</NavLink>
       </LinkItem>
       <LinkItem>
-        <NavLink to="/">Contact Us</NavLink>
+        <NavLink to="/contact-us">Contact Us</NavLink>
       </LinkItem>
       <LinkItem>
         <NavLink
@@ -51,7 +52,7 @@ const SignedInLinks = ({ toggle }) => {
         {/* <Menu /> */}
         <Tooltip title="Account settings" onClick={handleClick}>
           <div className="prof_image">
-            <img src={picture} alt="Profile_picture" />
+            <UserImage src={picture} alt="Profile_picture" />
           </div>
         </Tooltip>
       </LinkItem>
@@ -115,6 +116,14 @@ const SignedInLinks = ({ toggle }) => {
   );
 };
 
+const UserImage = styled.img`
+margin-top: -30px;
+margin-left: -25px;
+width: 45px;
+height: 45px;
+border-radius: 50%;
+position: absolute;
+`
 const Links = styled.ul`
   @media (max-width: 900px) {
     padding: 20px;
@@ -180,5 +189,6 @@ const LinkItem = styled.li`
     font-size: 20px;
   }
 `;
+
 
 export default SignedInLinks;

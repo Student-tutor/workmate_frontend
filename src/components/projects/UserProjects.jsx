@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
 import {
-  GetUserProjects,
+  GetUserProjects, Cp, Modal, Title
   // ProjectCont,
   // Title
 } from "../../Styled";
+
 import emptyState from "../../assets/images/empty_state_home_activity.svg"
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
-
+import PaymentForm from "../payment/paymentForm";
 
 // mui
 import Table from '@mui/material/Table';
@@ -34,8 +35,11 @@ import TableRow from '@mui/material/TableRow';
 //
 
 
-const UserProjects = () => {
+const UserProjects = (props) => {
   const [projects, setProjects] = useState([])
+  const [pay, setPay] = useState(false)
+  const [modal, setModal] = useState(false);
+
 
   const serverUrl = process.env.REACT_APP_SERVER_URL;
   const {
@@ -44,6 +48,10 @@ const UserProjects = () => {
     getAccessTokenWithPopup,
     user 
   } = useAuth0();
+
+  const openModal = () => {
+    setModal(!modal);
+  };
 
   useEffect(() => {
     userProjects()
@@ -62,11 +70,9 @@ const UserProjects = () => {
         }).then((response) => {
           const data = response.data.projects;
           setProjects(data)
-         console.log(data)
-         console.log(typeof data)
-         console.log(data.userId)
+         console.log(response.data.projects)
+         console.log(response.data.projects.paymentDetails)
         })
-      
     } catch (error) {
       console.log(error)
     }  
@@ -110,9 +116,23 @@ const UserProjects = () => {
                     <TableCell align="right">
                       {project.submissionDate}
                     </TableCell>
+                  {project.isPaid == false ? 
+                  <div>
                     <TableCell align="right">
-                      <button>Pay</button>
+                      <button onClick={openModal}>Pay</button>
                     </TableCell>
+                    <Modal className={modal ? "active" : ""}>
+                        
+                        <PaymentForm openModal={openModal} />
+                      </Modal>
+                    </div>
+                    :
+                    <div>
+                    <TableCell align="right">
+                       <button>Paid</button>
+                     </TableCell>
+                     </div>
+                    }
                   </TableRow>
                 );
               })

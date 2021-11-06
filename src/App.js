@@ -6,13 +6,16 @@ import SignIn from "./components/auth/SignIn"
 import Dashboard from "./components/dashboard/Dashboard";
 import Navbar from "./components/layout/Navbar";
 import HomePage from "./components/pages/Home/HomePage";
-import Mentors from "./components/pages/mentors/Mentors";
+import AboutUs from "./components/pages/mentors/AboutUs";
 import Projects from './components/projects/Projects'
 import Loading from './components/layout/Loading'
 import ProtectedRoute from './components/layout/ProtectedRoutes'
 import ExternalApi from './components/pages/ExternalApi'
 import Admin from './components/pages/Admin/Admin'
-import ContactUs from './components/pages/Contact/ContactForm'
+import ContactUs from './components/pages/Contact/ContactUs'
+import PaymentVerify from './components/payment/PaymentVerify'
+import PrivacyPolicy from './components/privacy/PrivacyPolicy'
+import Footer from './components/layout/Footer'
 
 
 function App() {
@@ -34,11 +37,15 @@ function App() {
       <Switch>
         <Route exact path='/' component={HomePage}/>
         <Route exact path='/signin' component={SignIn}/>
-        <Route exact path='/mentors' component={Mentors}/>
+        <Route exact path='/about-us' component={AboutUs}/>
+        <Route exact path='/contact-us' component={ContactUs} />
+        <Route exact path='/privacy-policy' component={PrivacyPolicy} />
+        
         <ProtectedRoute exact path='/Dashboard' component={Dashboard}/>
         <ProtectedRoute  exact path='/admin' component={Admin}/>
-        <Route exact path='/contact-us' component={ContactUs} />
+        <ProtectedRoute exact path='/paystack/callback' component={PaymentVerify} />
       </Switch>
+      <Footer />
     </div>
     </Router>
   );
