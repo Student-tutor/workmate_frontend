@@ -49,6 +49,12 @@ const ContactUs = () => {
       phoneNumber,
     }
     axios.post(`${serverUrl}/contact-us`,  contactData, {
+    }).then(() => {
+      setSenderName("");
+      setSenderEmail("");
+      setSubject("");
+      setMessage("");
+      setPhoneNumber("");
     })    
     history.push("/contact-us")
   }
