@@ -38,7 +38,7 @@ const Navbar = (props) => {
     return (
       <Nav className={navbar ? "active" : ""}>
         <Link to="/">
-          <Logo src={logo} />
+         <h3>  <Logo src={logo} /> <b> <span className='work-mate'>W</span>ork<span>M</span>ate</b></h3>
         </Link>
         {links}
         <Toggle onClick={handleClick} className="toggle">

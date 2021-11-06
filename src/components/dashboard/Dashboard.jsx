@@ -9,8 +9,8 @@ const Dashboard = () => {
     return (
         <DashboardCont>
             <Div>
-                <Createproject />
-            <Profile />
+              <Createproject />
+              <Profile />
             </Div>
             
             <UserProjects/>

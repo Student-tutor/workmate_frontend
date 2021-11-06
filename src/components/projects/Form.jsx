@@ -73,12 +73,9 @@ const ProjectForm = ({openModal}) => {
     });
     history.push("/dashboard");
   };
-
-
-
+  
   return (
     <Background>
-     
       <Box>
         <button className="close" onClick={openModal}>
         <FaTimes/>

@@ -276,7 +276,7 @@ export const ShowcaseText = styled.div`
   }
 `;
 export const ShowcaseTitle = styled.h3`
-  font-size: 32pt;
+  font-size: 27pt;
   font-weight: 700;
   margin-bottom: 20px;
   letter-spacing: 1px;
@@ -906,3 +906,25 @@ export const AdminStyle = styled.div`
     font-weight: 900;
   }
 `;
+
+
+// PrivacyCont
+export const PrivacyCont = styled.div`
+margin: 12%;
+@media (max-width: 900px) {
+  margin-top: 25%;
+  }
+
+`
+// Footer
+export const FooterCont = styled.div`
+.footer-color{
+  background-color: var(--Color-1) !important;
+}
+.adress-text{
+  font-size: 15px;
+}
+`
+export const ContactCont = styled.div`
+margin: 20%; 
+`

@@ -90,7 +90,7 @@ const {
                           <FormControl>
                               <InputField>
                               <Input 
-                               type= 'text'
+                               type= 'number'
                                id ='text'
                                name='phoneNumber'
                                value={phoneNumber}

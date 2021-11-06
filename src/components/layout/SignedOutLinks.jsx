@@ -10,11 +10,11 @@ const SignedOutLinks = ({toggle}) => {
     return (
       <Links className={toggle ? "active" : ""}>
         <LinkItem>
-          <NavLink to="/mentors">For Parents</NavLink>
+          <NavLink to="/about-us">About Us</NavLink>
         </LinkItem>
         
         <LinkItem>
-          <NavLink to="/">For Students</NavLink>
+          <NavLink to="/contact-us">Contact Us</NavLink>
         </LinkItem>
 
         <LinkItem>

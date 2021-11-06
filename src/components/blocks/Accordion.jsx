@@ -16,6 +16,7 @@ const Accordion = () => {
 
     return (
         <div className='accordion'>
+            <h2>Frequently Asked Questions</h2>
             <div className="container">
                     {Data.map(( item, index ) => {
                         return(
