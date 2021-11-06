@@ -118,7 +118,7 @@ const About = () => {
           <Title className="title">WHY CHOOSE US</Title>
           <Desc className="desc">
              We understand your pain because we have been there before. 
-            We will you the best result possible in a twinkle of an eye. 
+            We will give you the best result possible within a twinkle of an eye. 
             <p>
               Our services are so fast and affordable. 
             </p>

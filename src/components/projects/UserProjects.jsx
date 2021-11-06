@@ -98,7 +98,7 @@ const UserProjects = (props) => {
               </TableCell>
               <TableCell align="right">Pages</TableCell>
               <TableCell align="right">Submission Date</TableCell>
-              <TableCell align="center">Payment</TableCell>
+              <TableCell >Payment</TableCell>
             </TableRow>
           </TableHead>
           <TableBody classNmae="table_body">
@@ -136,7 +136,7 @@ const UserProjects = (props) => {
                     </div>
                     :
                     <div>
-                    <TableCell  align="right">
+                    <TableCell  >
                        <button className="paid-button">Paid</button>
                      </TableCell>
                      </div>
