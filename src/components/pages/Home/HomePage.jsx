@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import showcaseImg from '../../../assets/images/heroImage.png'
 import { 
   Home, 
@@ -37,7 +37,7 @@ const HomePage = () => {
                 <p className="icon"> <FaMarker/> Get expert-verified assistance on your work very fast </p>
                 <p className="icon"> <FaAward/> We are trusted by thousands of students and professionals across the world </p>
                   </ShowcaseContent>
-                  {!isAuthenticated &&
+                  {!isAuthenticated ?
                     <ShowcaseBtn className="btn"
                         onClick={() =>
                           loginWithRedirect({
@@ -46,6 +46,12 @@ const HomePage = () => {
                         } >
                           Click here
                 </ShowcaseBtn>
+                   :
+                   <Link to="/dashboard" style={{ textDecoration: 'none' }}>
+                   <ShowcaseBtn className="btn">
+                        Go to Dashboard
+                </ShowcaseBtn>
+                </Link>
                    }
                 </ShowcaseText>
             <ShowcaseImg>
