@@ -19,7 +19,7 @@ import {
 } from "../../../Styled";
 import { FaTimes } from "react-icons/fa";
 
-const ContactUs = (message) => {
+const ContactUs = () => {
   const history = useHistory();
 
   const [senderName, setSenderName] = useState("")

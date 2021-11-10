@@ -788,11 +788,11 @@ export const GetUserProjects = styled.div`
 
   .paid-button{
     background: green;
-    /* margin-left: 80px !important; */
+    margin-left: 15px !important;
   }
 
   .pay-button{
-    margin-left: 30px !important;
+    margin-left: 15px !important;
   }
 
   .empty-state {
