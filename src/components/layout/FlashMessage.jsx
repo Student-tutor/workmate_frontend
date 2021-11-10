@@ -18,7 +18,7 @@ const FlashMessage = ({message}) => {
     
     return (
         <>
-        <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+        <Snackbar open={open} onClose={handleClose}>
             <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
                 {message}
             </Alert>

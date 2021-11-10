@@ -75,16 +75,23 @@ const ProjectForm = ({openModal}) => {
         Authorization: `Bearer ${token}`,
       },
     }).then((response) => {
+      setTitle("");
+      setType("");
+      setContent("");
+      setPages("");
+      setPhoneNumber("");
+      setUserEmail("");
+      setSubmissionDate("");
       setShowFlash(response.data.message);
       setSucces(true);
     }).catch(err => console.log(err))  
     setSucces(false);
-    // history.push("/dashboard") 
-    // window.location.reload()
   };
+
   const reloadAfterClose = () => {
-    window.location.reload()
+    history.push("/dashboard") 
   }
+  
   return (
     <Background>
       <Box>
