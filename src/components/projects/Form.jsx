@@ -4,6 +4,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 import moment from "moment";
 import TextField from "@mui/material/TextField";
+// import FlashMessage from "../../../layout/FlashMessage";
+import FlashMessage from "../layout/FlashMessage"
 
 // import { formElements } from './FormElements'
 
@@ -50,6 +52,8 @@ const ProjectForm = ({openModal}) => {
     moment().locale("en").format("YYYY-MM-DD")
   );
   const [file, setFile] = useState("");
+  const [showFlash, setShowFlash] = useState("")
+  const [success, setSucces] = useState(false)
 
   const serverUrl = process.env.REACT_APP_SERVER_URL;
 
@@ -70,14 +74,21 @@ const ProjectForm = ({openModal}) => {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-    });
-    history.push("/dashboard");
+    }).then((response) => {
+      setShowFlash(response.data.message);
+      setSucces(true);
+    }).catch(err => console.log(err))  
+    setSucces(false);
+    // history.push("/dashboard") 
+    // window.location.reload()
   };
-  
+  const reloadAfterClose = () => {
+    window.location.reload()
+  }
   return (
     <Background>
       <Box>
-        <button className="close" onClick={openModal}>
+        <button className="close" onClick={openModal} onClickCapture={reloadAfterClose }>
         <FaTimes/>
       </button>
         <Title>Work Details</Title>
@@ -191,6 +202,9 @@ const ProjectForm = ({openModal}) => {
             <Input type="submit" name="submit" value="submit" className="btn" />
           </InputField>
         </Form>
+        {
+          success ? <FlashMessage message={showFlash} /> : ""
+        }
       </Box>
     </Background>
   );

@@ -40,7 +40,8 @@ const SignedOutLinks = ({toggle}) => {
 
 const Links = styled.ul`
   @media (max-width: 900px) {
-    padding: 20px;
+    padding: 30px;
+    padding-bottom: 50px;
     position: absolute;
     top: 15vh;
     right: 0;
@@ -48,8 +49,7 @@ const Links = styled.ul`
     background: var(--Color-1);
     color: #fff;
     transition: all 2s;
-
-   
+    border-radius: 15px;
 
     &.active {
       display: block;
@@ -78,6 +78,9 @@ const Links = styled.ul`
 const LinkItem = styled.li`
   display: inline-block;
   margin-left: 40px;
+  &:hover{
+    color: #616161;
+  }
 
   .btn {
     background: var(--Color-2);

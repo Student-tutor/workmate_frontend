@@ -2,9 +2,8 @@ import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
-import moment from "moment";
 import TextField from "@mui/material/TextField";
-
+import FlashMessage from "../../layout/FlashMessage";
 // import { formElements } from './FormElements'
 
 import {
@@ -28,10 +27,14 @@ const ContactUs = () => {
   const [subject, setSubject] = useState("Assignment/Essay")
   const [message, setMessage] = useState("")
   const [phoneNumber, setPhoneNumber] = useState("")
+  const [showFlash, setShowFlash] = useState("")
+  const [success, setSucces] = useState(false)
+  const [loading, setLoading] = useState("")
+
 
 //   const {
 //     getAccessTokenSilently,
-//     loginWithPopup,
+//     loginWithPopup, 
 //     getAccessTokenWithPopup,
 //     user,
 //   } = useAuth0();
@@ -49,14 +52,19 @@ const ContactUs = () => {
       phoneNumber,
     }
     axios.post(`${serverUrl}/contact-us`,  contactData, {
-    }).then(() => {
+    }).then((response) => {
       setSenderName("");
       setSenderEmail("");
       setSubject("");
       setMessage("");
       setPhoneNumber("");
+      setShowFlash(response.data.message);
+      setSucces(true);
+    }).catch(error => {
+      console.log(error)
     })    
-    history.push("/contact-us")
+    // history.push("/contact-us")
+    setSucces(false);
   }
   
   return (
@@ -147,6 +155,9 @@ const ContactUs = () => {
             <Input type="submit" name="submit" value="submit" className="btn" />
           </InputField>
         </Form>
+        {
+          success ? <FlashMessage message={showFlash} /> : ""
+        }
       </Box>
     </Background>
     </ContactCont>

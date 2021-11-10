@@ -133,15 +133,17 @@ position: absolute;
 
 `
 const Links = styled.ul`
-  @media (max-width: 900px) {
-    padding: 20px;
+@media (max-width: 900px) {
+    padding: 30px;
+    padding-bottom: 50px;
     position: absolute;
-    top: 10vh;
+    top: 15vh;
     right: 0;
     display: none;
-    background: var(--c1);
-    color: var(--c);
+    background: var(--Color-1);
+    color: #fff;
     transition: all 2s;
+    border-radius: 15px;
 
     &.active {
       display: block;
@@ -170,6 +172,10 @@ const Links = styled.ul`
 const LinkItem = styled.li`
   display: inline-block;
   margin-left: 40px;
+  &:hover{
+    color: #616161;
+  }
+  
   @media (max-width: 900px) {
     display: block;
     margin: 20px 0;
