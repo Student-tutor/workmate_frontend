@@ -37,8 +37,8 @@ const Navbar = (props) => {
 
     return (
       <Nav className={navbar ? "active" : ""}>
-        <Link to="/">
-         <h3>  <Logo src={logo} /> <b> <span className='work-mate'>W</span>ork<span>M</span>ate</b></h3>
+        <Link to="/" className='logo'>
+          <Logo src={logo} /> <h3> <span className='work-mate'>WorkMate</span></h3>
         </Link>
         {links}
         <Toggle onClick={handleClick} className="toggle">
@@ -58,10 +58,17 @@ const Nav = styled.div`
   width: 100%;
   top: 0;
   left: 0;
-  padding: 2% 5%;
+  padding: 2% 8%;
   /* overflow: hidden; */
   background: var(--Color-5);
   transition: all .5s;
+  z-index: 999;
+
+  .logo {
+display: flex;
+justify-content: space-between;
+align-items: center;
+  }
 
   a {
     color: white;
@@ -79,6 +86,7 @@ const Nav = styled.div`
 
 const Logo = styled.img`
 width: 50px;
+margin-right: 20px;
 `;
 
 const Toggle = styled.div`
