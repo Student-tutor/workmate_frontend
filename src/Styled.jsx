@@ -15,7 +15,7 @@ export const FormBackground = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 8;
 
 `;
 
@@ -28,6 +28,12 @@ export const Box = styled.div`
   z-index: 999;
   position: relative;
   box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.3);
+
+
+  .close {
+    z-index: 999;
+    color: #000;
+  }
 
   @media (max-width: 900px) {
     width: 90%;
@@ -53,6 +59,7 @@ export const FormOption = styled.div`
     *::after {
       box-sizing: border-box;
     }
+    
     /* appearance: none; */
     border: none;
     padding: 0 1em 0 0;
@@ -63,12 +70,14 @@ export const FormOption = styled.div`
     cursor: inherit;
     line-height: inherit;
     width: 90%;
-    height: 40px;
+    height: 60px;
     box-sizing: border-box;
     margin-bottom: 3vh;
     outline: none;
     border-radius: 6px;
-    border: none;
+    font-size: 15px;
+    /* border: none; */
+    /* background-color: white;  */
   }
 `;
 
@@ -260,7 +269,7 @@ export const Showcase = styled.section`
   align-items: center;
   height: 90vh;
   background: var(--Color-5);
-  padding: 15vh  5%  5vh;
+  padding: 15vh  8%  5vh;
   padding-top: 15vh;
 
   @media (max-width: 900px) {
@@ -327,7 +336,7 @@ export const About = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 5%;
+  padding: 5%  8%;
   flex-direction: row-reverse;
 
   @media (max-width: 900px) {
@@ -400,7 +409,7 @@ export const Focus = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 5%;
+  padding: 5% 8%;
   flex-direction: row-reverse;
 
   @media (max-width: 900px) {
@@ -441,7 +450,7 @@ export const WhoWeAre = styled.div`
 `;
 
 export const WhatWeDo = styled.div`
-  padding: 5%;
+  padding: 5%  8%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -497,7 +506,7 @@ export const WhatWeDoImg = styled.div`
 `;
 
 export const WorkWith = styled.div`
-  padding: 5%;
+  padding: 5% 8%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -544,7 +553,7 @@ export const WorkWithImg = styled.div`
 `;
 
 export const YourInput = styled.div`
-  padding: 5%;
+  padding: 5% 8%;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -595,7 +604,7 @@ export const Banner = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-gap: 50px;
-  padding: 5%;
+  padding: 5% 8%;
   background: var(--Color-5);
   align-items: center;
   margin-top: 5%;
@@ -629,7 +638,7 @@ export const BannerImg = styled.div`
 // Dashboard
 
 export const DashboardCont = styled.div`
-  padding: 15vh  5%  3vh;
+  padding: 15vh  8%  3vh;
   margin-top: 13vh;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -782,11 +791,11 @@ export const GetUserProjects = styled.div`
 
   .paid-button{
     background: green;
-    /* margin-left: 80px !important; */
+    margin-left: 15px !important;
   }
 
   .pay-button{
-    margin-left: 30px !important;
+    margin-left: 15px !important;
   }
 
   .empty-state {
@@ -936,4 +945,8 @@ export const FooterCont = styled.div`
 `
 export const ContactCont = styled.div`
 margin: 20%; 
+
+@media (max-width: 900px) {
+  margin: 5%;
+}
 `

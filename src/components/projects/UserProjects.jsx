@@ -136,7 +136,7 @@ const UserProjects = (props) => {
                     </div>
                     :
                     <div>
-                    <TableCell  >
+                    <TableCell align="right" >
                        <button className="paid-button">Paid</button>
                      </TableCell>
                      </div>

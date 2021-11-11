@@ -53,7 +53,7 @@ const SignedInLinks = ({ toggle }) => {
       </LinkItem>
       <LinkItem>
         {/* <Menu /> */}
-        <Tooltip title="Account settings" onClick={handleClick}>
+        <Tooltip title="" onClick={handleClick}>
           <div className="prof_image">
             <UserImage src={picture} alt="Profile_picture" />
           </div>
@@ -144,6 +144,8 @@ const Links = styled.ul`
     color: #fff;
     transition: all 2s;
     border-radius: 15px;
+    z-index: 100;
+
 
     &.active {
       display: block;
