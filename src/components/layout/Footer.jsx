@@ -107,7 +107,7 @@ export default function Footer() {
                 </Link>
               </Box>
               <Box>
-                <Link href="/" color="inherit">
+                <Link href="https://twitter.com/Workmate_Team" color="inherit">
                   Linkedin
                 </Link>
               </Box>
