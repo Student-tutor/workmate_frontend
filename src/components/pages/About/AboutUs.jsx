@@ -125,14 +125,14 @@ const About = () => {
           </Desc>
         </YourInputText>
       </YourInput>
-
+      {!isAuthenticated &&
       <Banner>
         <BannerText>
           <Title className="title">JOIN US TODAY</Title>
           <Desc className="desc">
                   
           </Desc>
-          {!isAuthenticated &&
+         
           <Link to="" className="btn"
            onClick={() =>
             loginWithRedirect({
@@ -142,13 +142,14 @@ const About = () => {
           >
             Get your account
           </Link>
-          }
+         
         </BannerText>
 
         <BannerImg>
           <img src={wedo} alt="" />
         </BannerImg>
       </Banner>
+       }
     </div>
   );
 };

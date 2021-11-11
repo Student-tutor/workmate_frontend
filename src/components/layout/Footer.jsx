@@ -97,12 +97,12 @@ export default function Footer() {
             <Grid item xs={12} sm={3}>
               <Box borderBottom={1} marginBottom={1}> <b>Social Media</b></Box>
               <Box>
-                <Link href="/" color="inherit">
+                <Link href="https://twitter.com/Workmate_Team" color="inherit">
                   Twitter
                 </Link>
               </Box>
               <Box>
-                <Link href="/" color="inherit">
+                <Link href="https://www.facebook.com/workmateteam" color="inherit">
                   Facebook
                 </Link>
               </Box>

@@ -59,6 +59,7 @@ export const FormOption = styled.div`
     *::after {
       box-sizing: border-box;
     }
+    
     /* appearance: none; */
     border: none;
     padding: 0 1em 0 0;
@@ -69,12 +70,14 @@ export const FormOption = styled.div`
     cursor: inherit;
     line-height: inherit;
     width: 90%;
-    height: 40px;
+    height: 60px;
     box-sizing: border-box;
     margin-bottom: 3vh;
     outline: none;
     border-radius: 6px;
-    border: none;
+    font-size: 15px;
+    /* border: none; */
+    /* background-color: white;  */
   }
 `;
 
