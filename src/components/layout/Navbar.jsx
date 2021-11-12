@@ -53,12 +53,12 @@ const Nav = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 15vh;
+  height: 12vh;
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
-  padding: 2% 8%;
+  padding: 1% 6%;
   /* overflow: hidden; */
   background: var(--Color-5);
   transition: all .5s;

@@ -289,6 +289,7 @@ export const ShowcaseTitle = styled.h3`
   font-weight: 700;
   margin-bottom: 20px;
   letter-spacing: 1px;
+  margin-top: 10px; 
 `;
 export const ShowcaseContent = styled.p`
   line-height: 150%;
@@ -351,7 +352,8 @@ export const AboutCards = styled.div`
 `;
 
 export const Card = styled.div`
-  width: 180px;
+  width: 220px;
+  height: 150px;
   box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   padding: 15px 10px;
@@ -400,6 +402,17 @@ export const Step = styled.span`
 `;
 export const Desc = styled.p`
   font-size: 13px;
+  .focus-title{
+    font-size: 25px;
+  }
+  .focus{
+    display: flex;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
   &.desc {
     line-height: 150%;
     font-size: 16px;
@@ -422,7 +435,7 @@ export const FocusImg = styled.div`
   width: 50%;
 
   img {
-    width: 50%;
+    width: 60%;
     @media (max-width: 900px) {
       width: 100%;
     }

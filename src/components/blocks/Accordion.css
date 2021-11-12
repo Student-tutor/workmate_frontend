@@ -36,7 +36,8 @@
 }
 
 h1 {
-    font-size: 15pt;
+    font-size: 13pt;
+
 }
 
 .dropdown {
@@ -119,6 +120,6 @@ p {
     }
 
     h1 {
-        font-size: 17pt;
+        font-size: 12pt;
     }
 }
