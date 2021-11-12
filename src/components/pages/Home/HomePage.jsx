@@ -114,10 +114,10 @@ const HomePage = () => {
           <FocusText>
             <Title className="colored">Our Focus</Title>
             <Desc className="desc">
-             Workmate focuses on three main areas; 
-             <p> <LibraryBooksIcon /> Research</p>
-             <p> <CreateIcon /> Writing </p> 
-             <p> <PieChartIcon /> Data Analyses </p> 
+             <p className='focus-title'> Workmate focuses on three main areas; </p>
+             <p className='focus'> <LibraryBooksIcon /> Research</p>
+             <p className='focus'> <CreateIcon /> Writing </p> 
+             <p className='focus'> <PieChartIcon /> Data Analyses </p> 
              <p> 
                 We have experts that focus on each area 
                 to help you get the best results within the shortest period possible. 
