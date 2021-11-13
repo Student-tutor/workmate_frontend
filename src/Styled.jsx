@@ -46,7 +46,7 @@ export const Form = styled.form`
   grid-gap: 30px;
   margin-top: 15vh;
   @media (max-width: 900px) {
-    grid-gap: 20px;
+    grid-gap: 10px;
     margin-top: 8vh;
     padding: 10px;
   }
