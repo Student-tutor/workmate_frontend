@@ -31,7 +31,7 @@ const SignedOutLinks = ({toggle}) => {
               })
              } 
             >
-            Join for free
+            Work with Researchers
           </NavLink>
         </LinkItem>
       </Links>
@@ -78,15 +78,19 @@ const Links = styled.ul`
 const LinkItem = styled.li`
   display: inline-block;
   margin-left: 40px;
+  // font-weight: bold;
+  
   &:hover{
     color: #616161;
   }
 
   .btn {
     background: var(--Color-2);
-    padding: 8px 17px;
+    padding: 12px 20px;
     border-radius: 50px;
     color: #fff;
+    font-weight: 500;
+   
   }
 
   @media (max-width: 900px) {

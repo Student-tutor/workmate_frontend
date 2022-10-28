@@ -64,6 +64,11 @@ const Nav = styled.div`
   transition: all .5s;
   z-index: 999;
 
+  @media (max-width: 900px) {
+    height: 9vh;
+    
+  }
+
   .logo {
 display: flex;
 justify-content: space-between;
