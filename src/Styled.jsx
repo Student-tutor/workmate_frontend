@@ -263,11 +263,12 @@ export const Home = styled.div``;
 export const ShowcaseContainer = styled.div``;
 
 export const Showcase = styled.section`
-  display: grid;
+  display: flex;
   grid-template-columns: auto 40%;
   grid-gap: 5%;
   align-items: center;
-  height: 90vh;
+  justify-content: center;
+  height: 100vh;
   background: var(--Color-5);
   padding: 15vh  8%  5vh;
   padding-top: 15vh;
@@ -275,6 +276,7 @@ export const Showcase = styled.section`
   @media (max-width: 900px) {
     padding-top: 10vh;
     grid-template-columns: 1fr;
+    
   }
 `;
 export const ShowcaseText = styled.div`
@@ -285,13 +287,17 @@ export const ShowcaseText = styled.div`
   }
 `;
 export const ShowcaseTitle = styled.h3`
-  font-size: 50pt;
+  font-size: 3.1875rem;
   font-weight: 700;
   margin-bottom: 20px;
   letter-spacing: 1px;
   margin-top: 10px; 
-  width: 49rem;
+  width: 46rem;
   color: offwhite;
+  @media (max-width: 900px) {
+    width: 100%;
+    // width: 24rem;
+  }
 
   span{
     color: var(--Color-2);
@@ -300,7 +306,13 @@ export const ShowcaseTitle = styled.h3`
 export const ShowcaseContent = styled.p`
   line-height: 150%;
   font-size: 18pt;
-  margin-bottom: 40px;
+  margin-bottom: 50px;
+  width: 40rem;
+  @media (max-width: 900px) {
+    width: 100%;
+    margin-bottom: 30px;
+    // width: 24rem;
+  }
 `;
 export const ShowcaseBtn = styled.a`
   font-size: 16pt;
@@ -309,6 +321,7 @@ export const ShowcaseBtn = styled.a`
   border-radius: 50px;
   background: Var(--Color-1);
   color: Var(--White);
+  
  
 `;
 
@@ -321,7 +334,8 @@ export const ShowcaseSlide = styled.div`
   position: relative;
 `;
 export const Img = styled.img`
-  width: 70%;
+  width: 36.75rem;
+  height: 36.75rem;
 `;
 
 // export const HowItWorks = styled.div`

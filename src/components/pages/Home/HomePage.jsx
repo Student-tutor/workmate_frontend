@@ -55,6 +55,7 @@ const HomePage = () => {
                 </Link>
                    }
                 </ShowcaseText>
+                
             <ShowcaseImg>
               <Img src={showcaseImg} alt="" />
             </ShowcaseImg>
