@@ -285,24 +285,31 @@ export const ShowcaseText = styled.div`
   }
 `;
 export const ShowcaseTitle = styled.h3`
-  font-size: 27pt;
+  font-size: 50pt;
   font-weight: 700;
   margin-bottom: 20px;
   letter-spacing: 1px;
   margin-top: 10px; 
+  width: 49rem;
+  color: offwhite;
+
+  span{
+    color: var(--Color-2);
+  }
 `;
 export const ShowcaseContent = styled.p`
   line-height: 150%;
-  font-size: 14pt;
-  margin-bottom: 20px;
+  font-size: 18pt;
+  margin-bottom: 40px;
 `;
 export const ShowcaseBtn = styled.a`
-  font-size: 15pt;
+  font-size: 16pt;
   text-decoration: none;
-  padding: 8px 20px;
+  padding: 14px 35px;
   border-radius: 50px;
   background: Var(--Color-1);
   color: Var(--White);
+ 
 `;
 
 export const ShowcaseImg = styled.div`
@@ -411,6 +418,11 @@ export const Desc = styled.p`
     margin-bottom: 20px;
     font-size: 20px;
     font-weight: 500;
+  }
+
+  svg{
+    color: var(--Color-2);
+    margin-right: 1rem;
   }
 
   &.desc {

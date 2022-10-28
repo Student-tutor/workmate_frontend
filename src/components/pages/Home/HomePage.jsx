@@ -13,7 +13,7 @@ import {
 
 import focus from '../../../assets/images/focus.png'
 import Accordion from '../../blocks/Accordion'
-import { FaArrowCircleRight, FaAward, FaMarker } from 'react-icons/fa'
+import { FaArrowCircleRight, FaAward, FaMarker, FaCheckCircle, } from 'react-icons/fa'
 import '../../blocks/Accordion.css'
 import { useAuth0 } from "@auth0/auth0-react";
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
@@ -31,11 +31,12 @@ const HomePage = () => {
         <ShowcaseContainer>
           <Showcase>
             <ShowcaseText>
-              <ShowcaseTitle>Your 24/7 Academic and Professional Work Helper</ShowcaseTitle>
+              {/* <ShowcaseTitle>Your 24/7 Academic and Professional Work Helper</ShowcaseTitle> */}
+              <ShowcaseTitle>Connecting you to the <span>top 1%</span>  Academic Research Experts </ShowcaseTitle>
               <ShowcaseContent>
-                <p className="icon"> <FaArrowCircleRight/> Let your friend help you with any academic and professional works</p>
-                <p className="icon"> <FaMarker/> Get expert-verified assistance on your work very fast </p>
-                <p className="icon"> <FaAward/> We are trusted by thousands of students and professionals across the world </p>
+                {/* <p className="icon"> <FaArrowCircleRight/> Let your friend help you with any academic and professional works</p> */}
+                <p className="icon"> Join Workmate today and get expert-verified assistance on your research, so fast... </p>
+                {/* <p className="icon"> <FaAward/> We are trusted by thousands of students and professionals across the world </p> */}
                   </ShowcaseContent>
                   {!isAuthenticated ?
                     <ShowcaseBtn className="btn"
@@ -44,7 +45,7 @@ const HomePage = () => {
                             screen_hint: "signup",
                           })
                         } >
-                          Click here
+                          Hire Researchers
                 </ShowcaseBtn>
                    :
                    <Link to="/dashboard" style={{ textDecoration: 'none' }}>
@@ -80,7 +81,7 @@ const HomePage = () => {
             <Steps>
               <Card>
                 <Step>1</Step>
-                <Title>Ask Questions</Title>
+                <Title>Talk to us</Title>
                 <Desc>
                  We are availabe 24/7 to work with you. 
                  Is it research or writing. Talk to us!
@@ -88,7 +89,7 @@ const HomePage = () => {
               </Card>
               <Card>
                 <Step>2</Step>
-                <Title>Get Help</Title>
+                <Title>Get Connected to Researchers</Title>
                 <Desc>
                  We are much glad to help you as fast as possible. 
                  Give us a try!
@@ -98,7 +99,7 @@ const HomePage = () => {
                 <Step>3</Step>
                 <Title>Go Beyond</Title>
                 <Desc>
-                  This is Computer age. Focus on what matters and go beyond!
+                  Get expert-verified research help and Focus on what matters!
                 </Desc>
               </Card>
             </Steps>
@@ -112,16 +113,16 @@ const HomePage = () => {
             <img src={focus} alt="" />
           </FocusImg>
           <FocusText>
-            <Title className="colored">Our Focus</Title>
+            <Title className="colored">Why Working with Workmate</Title>
             <Desc className="desc">
-             <p className='focus-title'> Workmate focuses on three main areas; </p>
-             <p className='focus'> <LibraryBooksIcon /> Research</p>
-             <p className='focus'> <CreateIcon /> Writing </p> 
-             <p className='focus'> <PieChartIcon /> Data Analyses </p> 
-             <p> 
+             {/* <p className='focus-title'> Workmate focuses on three main areas; </p> */}
+             <p className='focus'> <FaCheckCircle /> Expert-verified research</p>
+             <p className='focus'><FaCheckCircle /> Top-notch non-plagiarised writing </p> 
+             <p className='focus'><FaCheckCircle /> Accurate data Analyses </p> 
+             {/* <p> 
                 We have experts that focus on each area 
                 to help you get the best results within the shortest period possible. 
-             </p>  
+             </p>   */}
             </Desc>
           </FocusText>
         </Focus>

@@ -29,6 +29,10 @@ import {
 } from "../../../Styled";
 import showcase2 from "../../../assets/images/showcase2.svg";
 import wedo from "../../../assets/images/we_do.jpg";
+import DoImage from "../../../assets/images/what-we-do.jpg";
+import Choose from "../../../assets/images/chose.jpg";
+import JoinUs from "../../../assets/images/joinUs.jpg";
+
 import { Link } from "react-router-dom";
 
 const About = () => {
@@ -40,9 +44,9 @@ const About = () => {
       <ShowcaseContainer>
         <Showcase>
           <ShowcaseText>
-            <ShowcaseTitle>WorkMate is for Students and Professionals</ShowcaseTitle>
+            <ShowcaseTitle>WorkMate is for Students and Researchers</ShowcaseTitle>
             <ShowcaseContent>
-              Workmate helps you by taken care of all hassles that is attached to academic and professional related works; 
+              Workmate connects you to the top 1% academic research experts. We helps you by taken care of all hassles that is attached to academic and professional related works; 
               from <b>Research</b> to <b>Technical writing</b> to <b>Programming</b>.
             </ShowcaseContent>
             <ShowcaseContent>
@@ -90,7 +94,7 @@ const About = () => {
           </Desc>
         </WhatWeDoText>
         <WhatWeDoImg>
-          <img src={wedo} alt="" />
+          <img src={DoImage} alt="" />
         </WhatWeDoImg>
       </WhatWeDo>
 
@@ -112,7 +116,7 @@ const About = () => {
 
       <YourInput>
         <YourInputImg>
-          <img src={wedo} alt="" />
+          <img src={Choose} alt="" />
         </YourInputImg>
         <YourInputText>
           <Title className="title">WHY CHOOSE US</Title>
@@ -146,7 +150,7 @@ const About = () => {
         </BannerText>
 
         <BannerImg>
-          <img src={wedo} alt="" />
+          <img src={JoinUs} alt="" />
         </BannerImg>
       </Banner>
        }
