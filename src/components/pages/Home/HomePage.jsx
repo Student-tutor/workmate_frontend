@@ -90,7 +90,7 @@ const HomePage = () => {
               </Card>
               <Card>
                 <Step>2</Step>
-                <Title>Get Connected to Researchers</Title>
+                <Title>Connect with Researchers</Title>
                 <Desc>
                  We are much glad to help you as fast as possible. 
                  Give us a try!
