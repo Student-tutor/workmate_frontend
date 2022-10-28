@@ -100,7 +100,7 @@ const About = () => {
 
       <WorkWith>
         <WorkWithText>
-          <Title className="title">WE WORK WITH STUDENTS AND PROFESSIONALS</Title>
+          <Title className="title">WE WORK WITH STUDENTS AND RESEARCHERS</Title>
           <Desc className="desc">
             From your research to writings to technical assignments to resume to career advices, 
             Workmate works with you to get the best result possible. 
