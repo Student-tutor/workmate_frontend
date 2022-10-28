@@ -268,7 +268,7 @@ export const Showcase = styled.section`
   grid-gap: 5%;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 90vh;
   background: var(--Color-5);
   padding: 15vh  8%  5vh;
   padding-top: 15vh;
@@ -296,6 +296,7 @@ export const ShowcaseTitle = styled.h3`
   color: offwhite;
   @media (max-width: 900px) {
     width: 100%;
+    font-size: 2.1875rem;
     // width: 24rem;
   }
 
@@ -310,7 +311,7 @@ export const ShowcaseContent = styled.p`
   width: 40rem;
   @media (max-width: 900px) {
     width: 100%;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     // width: 24rem;
   }
 `;
@@ -373,8 +374,8 @@ export const AboutCards = styled.div`
 `;
 
 export const Card = styled.div`
-  width: 220px;
-  height: 150px;
+  width: 260px;
+  height: 200px;
   box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.4);
   border-radius: 10px;
   padding: 15px 10px;
@@ -387,6 +388,12 @@ export const Card = styled.div`
     /* color: #fff; */
     transform: translateY(25px);
   }
+
+  @media (max-width: 900px) {
+  width: 220px;
+  height: 170px;
+  }
+
 `;
 export const Title = styled.h4`
   font-size: var(--h3);
