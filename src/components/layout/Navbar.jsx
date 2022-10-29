@@ -21,15 +21,15 @@ const Navbar = (props) => {
       </AfterSignIn>  : 
     <SignedOutLinks toggle={toggle} />;
 
-    const changeBackground = () => {
-        if(window.scrollY >= 80) {
-            setNavbar(true);
-        } else {
-            setNavbar(false)
-        }
-    }
+    // const changeBackground = () => {
+    //     if(window.scrollY >= 80) {
+    //         setNavbar(true);
+    //     } else {
+    //         setNavbar(false)
+    //     }
+    // }
 
-  window.addEventListener("scroll", changeBackground)
+  // window.addEventListener("scroll", changeBackground)
   
   const handleClick = () => {
     setToggle(!toggle);

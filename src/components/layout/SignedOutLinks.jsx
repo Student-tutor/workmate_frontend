@@ -34,14 +34,26 @@ const SignedOutLinks = ({toggle}) => {
             Work with Researchers
           </NavLink>
         </LinkItem>
+
+        <LinkItem className='researcher'>
+          <NavLink to=""  className="btn btn-researcher" onClick={() =>
+              loginWithRedirect({
+                screen_hint: "signup",
+              })
+             } 
+            >
+            Apply as a Researcher
+          </NavLink>
+        </LinkItem>
       </Links>
     );
 }
 
 const Links = styled.ul`
   @media (max-width: 900px) {
+    display: grid;
     padding: 30px;
-    padding-bottom: 50px;
+    padding-bottom: 20px;
     position: absolute;
     top: 15vh;
     right: 0;
@@ -75,6 +87,10 @@ const Links = styled.ul`
   }
 `;
 
+const LinkItemResearcher = styled.li`
+  display: inline-block;
+`;
+
 const LinkItem = styled.li`
   display: inline-block;
   margin-left: 40px;
@@ -83,17 +99,37 @@ const LinkItem = styled.li`
   &:hover{
     color: #616161;
   }
-
-  .btn {
-    background: var(--Color-2);
-    padding: 12px 20px;
-    border-radius: 50px;
-    color: #fff;
-    font-weight: 500;
-   
+  @media (max-width: 900px) {
+    padding: 10px;
   }
 
+  .btn {
+    background: var(--White);
+    padding: 12px 20px;
+    border-radius: 50px;
+    color: var(--Color-2);
+    font-weight: 500;
+    :hover{
+      background-color: var(--Color-2);
+      color: Var(--White);
+    } 
+
+      
+  }
+  .btn-researcher{
+    background-color: var(--White);
+    color: var(--Color-2);
+    border: 1px solid var(--Color-2);
+
+    :hover{
+      background-color: var(--Color-2);
+      color: Var(--White);
+    } 
+  }
+ 
+
   @media (max-width: 900px) {
+    
 a {
   color:black;
 }

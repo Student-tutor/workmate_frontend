@@ -315,6 +315,14 @@ export const ShowcaseContent = styled.p`
     // width: 24rem;
   }
 `;
+export const ShowcaseButtons = styled.div`
+  @media (max-width: 900px) {
+    display: grid;
+    justify-content: start;
+    align-items: flex-start;
+    margin-top: -15px;
+   }
+`
 export const ShowcaseBtn = styled.a`
   font-size: 16pt;
   text-decoration: none;
@@ -322,8 +330,44 @@ export const ShowcaseBtn = styled.a`
   border-radius: 50px;
   background: Var(--Color-1);
   color: Var(--White);
-  
- 
+  margin-right: 2rem;
+  text-align: center;
+  cursor: pointer;
+  :hover{
+      background-color: var(--White);
+      color: Var(--Color-1);
+      border: 1px solid var(--Color-1);
+    } 
+    @media (max-width: 900px) {
+      padding: 8px 16px;
+      font-size: 14pt;
+      margin-bottom: 15px;
+      
+   }    
+`;
+
+export const ShowcaseBtnResearcher = styled.a`
+  font-size: 16pt;
+  text-decoration: none;
+  padding: 14px 35px;
+  border-radius: 50px;
+  background: Var(--White);
+  color: Var(--Color-1);
+  margin-right: 2rem;
+  border: 1px solid var(--Color-1);
+  cursor: pointer;
+  text-align: center;
+  :hover{
+      background-color: var(--Color-1);
+      color: Var(--White);
+    }  
+    
+    @media (max-width: 900px) {
+      padding: 8px 16px;
+      font-size: 14pt;
+     
+      
+   } 
 `;
 
 export const ShowcaseImg = styled.div`
@@ -395,6 +439,7 @@ export const Card = styled.div`
   }
 
 `;
+
 export const Title = styled.h4`
   font-size: var(--h3);
   margin-bottom: 20px;
@@ -430,9 +475,11 @@ export const Step = styled.span`
 `;
 export const Desc = styled.p`
   font-size: 13px;
+  margin-bottom: 3rem;
   .focus-title{
     font-size: 25px;
   }
+  
   .focus{
     display: flex;
     margin-top: 20px;
@@ -461,6 +508,8 @@ export const Focus = styled.div`
   @media (max-width: 900px) {
     flex-direction: column-reverse;
   }
+
+  
 `;
 export const FocusImg = styled.div`
   flex: 1;
@@ -470,9 +519,13 @@ export const FocusImg = styled.div`
   img {
     width: 60%;
     @media (max-width: 900px) {
-      width: 100%;
+      display: none;
     }
   }
+
+  @media (max-width: 900px) {
+      margin-top: 40px;           
+   }
 `;
 export const FocusText = styled.div`
   flex: 1;

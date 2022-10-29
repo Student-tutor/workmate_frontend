@@ -16,7 +16,7 @@ import {
   InputField,
   Input,
   ContactCont,
-} from "../../../Styled";
+} from "../../../FormStyle";
 import { FaTimes } from "react-icons/fa";
 
 const ContactUs = () => {
@@ -24,7 +24,7 @@ const ContactUs = () => {
 
   const [senderName, setSenderName] = useState("")
   const [senderEmail, setSenderEmail] = useState("")
-  const [subject, setSubject] = useState("Assignment/Essay")
+  const [subject, setSubject] = useState("Subject")
   const [message, setMessage] = useState("")
   const [phoneNumber, setPhoneNumber] = useState("")
   const [showFlash, setShowFlash] = useState("")
@@ -74,6 +74,7 @@ const ContactUs = () => {
         <Title>How can we help you ?</Title>
         <Form onSubmit={submitForm}>
           <FormControl>
+            
             <InputField>
               <FormOption>
                 <select
@@ -81,6 +82,7 @@ const ContactUs = () => {
                   value={subject} 
                   onChange={(e)=>setSubject(e.target.value)}
                 >
+                  <option> Subject </option>
                   <option> Assignment/Essay </option>
                   <option> Research project </option>
                   <option> Data Analyses </option>
