@@ -9,7 +9,7 @@ import {
   ShowcaseContent, ShowcaseImg, ShowcaseText, 
   ShowcaseTitle, Step, Title, Desc, Card, Focus, 
   FocusImg, FocusText, Steps, About, AboutText, 
-  AboutCards } from '../../../Styled'
+  AboutCards, ShowcaseButtons, ShowcaseBtnResearcher } from '../../../Styled'
 
 import focus from '../../../assets/images/focus.png'
 import Accordion from '../../blocks/Accordion'
@@ -37,22 +37,31 @@ const HomePage = () => {
                 {/* <p className="icon"> <FaArrowCircleRight/> Let your friend help you with any academic and professional works</p> */}
                 <p className="icon"> Join Workmate today and get expert-verified assistance on your research, so fast... </p>
                 {/* <p className="icon"> <FaAward/> We are trusted by thousands of students and professionals across the world </p> */}
-                  </ShowcaseContent>
+                </ShowcaseContent>
                   {!isAuthenticated ?
-                    <ShowcaseBtn className="btn"
-                        onClick={() =>
-                          loginWithRedirect({
-                            screen_hint: "signup",
-                          })
-                        } >
-                          Hire Researchers
-                </ShowcaseBtn>
+                    <ShowcaseButtons>
+                      <ShowcaseBtn className="btn"
+                               onClick={() =>
+                               loginWithRedirect({
+                                screen_hint: "signup",
+                                })
+                              } >
+                            Hire Researchers
+                      </ShowcaseBtn>
+
+                       <Link to="/researcher/apply" style={{ textDecoration: 'none' }}>                                                      
+                        <ShowcaseBtnResearcher className="btn-researchers"
+                                >
+                          Apply as a Researcher
+                        </ShowcaseBtnResearcher>
+                       </Link>   
+                     </ShowcaseButtons>
                    :
                    <Link to="/dashboard" style={{ textDecoration: 'none' }}>
                    <ShowcaseBtn className="btn">
                         Go to Dashboard
-                </ShowcaseBtn>
-                </Link>
+                   </ShowcaseBtn>
+                  </Link>
                    }
                 </ShowcaseText>
                 
@@ -125,6 +134,31 @@ const HomePage = () => {
                 to help you get the best results within the shortest period possible. 
              </p>   */}
             </Desc>
+            {!isAuthenticated ?
+                <ShowcaseButtons>
+                  <ShowcaseBtn className="btn"
+                            onClick={() =>
+                              loginWithRedirect({
+                                screen_hint: "signup",
+                              })
+                            } >
+                              Hire Researchers
+                    </ShowcaseBtn>
+                    <Link to="/researcher/apply" style={{ textDecoration: 'none' }}>
+                      <ShowcaseBtnResearcher className="btn-researchers"
+                            >
+                            Apply as a Researcher                                                         
+                      </ShowcaseBtnResearcher>
+                    </Link>
+                </ShowcaseButtons>
+                   
+                   :
+                   <Link to="/dashboard" style={{ textDecoration: 'none' }}>
+                   <ShowcaseBtn className="btn">
+                        Go to Dashboard
+                   </ShowcaseBtn>
+                  </Link>
+                   }
           </FocusText>
         </Focus>
 

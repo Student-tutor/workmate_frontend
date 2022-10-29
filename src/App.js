@@ -14,6 +14,7 @@ import ContactUs from './components/pages/Contact/ContactUs'
 import PaymentVerify from './components/payment/PaymentVerify'
 import PrivacyPolicy from './components/privacy/PrivacyPolicy'
 import Footer from './components/layout/Footer'
+import ResearcherForm from "./components/pages/ResearcherForm/ResearcherForm"
 
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
         <Route exact path='/about-us' component={AboutUs}/>
         <Route exact path='/contact-us' component={ContactUs} />
         <Route exact path='/privacy-policy' component={PrivacyPolicy} />
+        <Route exact path='/researcher/apply' component={ResearcherForm} />
         
         <ProtectedRoute exact path='/dashboard' component={Dashboard}/>
         <ProtectedRoute  exact path='/admin' component={Admin}/>
