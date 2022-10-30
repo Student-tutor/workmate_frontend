@@ -162,6 +162,7 @@ export const Nav = styled.div`
 
 export const Logo = styled.img`
   width: 50px;
+  
 `;
 
 export const Toggle = styled.div`

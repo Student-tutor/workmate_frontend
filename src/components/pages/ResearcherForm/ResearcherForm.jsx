@@ -5,6 +5,8 @@ import axios from "axios";
 import TextField from "@mui/material/TextField";
 import FlashMessage from "../../layout/FlashMessage";
 // import { formElements } from './FormElements'
+import MultiSelect from  'react-multiple-select-dropdown-lite'
+import  'react-multiple-select-dropdown-lite/dist/index.css'
 
 import {
   Background,
@@ -22,16 +24,39 @@ import { FaTimes } from "react-icons/fa";
 const ResearcherApply = () => {
   const history = useHistory();
 
-  const [fullName, setFullName] = useState("")  
+  const [firstName, setFirstName] = useState("")  
+  const [lastName, setLastName] = useState("")  
   const [senderEmail, setSenderEmail] = useState("")
   const [phone, setPhone] = useState("")
   const [message, setMessage] = useState("")
-   const [showFlash, setShowFlash] = useState("")
+  const [showFlash, setShowFlash] = useState("")
+  const [error, setError] = useState(false)
   const [success, setSucces] = useState(false)
   const [loading, setLoading] = useState("")
   const [qualification, setQualification] = useState("Qualification")
   const [experience, setExperience] = useState("Experience")
   const [resume, setResume] = useState("")
+  const [interest, setInterest] = useState([])
+  const [linkedln, setLinkedln] = useState("")
+  const [value, setvalue] = useState('')
+  const [label, setLabel] = useState('')
+
+    const  options  = [
+    { label:  'Engineering', value:  'Engineering'  },
+    { label:  'Social Science', value:  'Social Science'  },
+    { label:  'Management Science', value:  'Management Science'  },
+    { label:  'Clinical Science', value:  'Clinical Science'  },
+    { label:  'Computer Science and Programming', value:  'Computer Science and Programming'  },
+    { label:  'General Science', value:  'General Science'  },
+    { label:  'law, Communication and Art', value:  'law, Communication and Art'  },
+    { label:  'English and Literature', value:  'English and Literature'  },
+    { label:  'Technical Writing', value:  'Technical Writing'  },
+  ]
+
+  const  handleOnchange  =  e  => {
+    setvalue(e)  
+    setInterest([e])        
+  }
  
 
 //   const {
@@ -47,31 +72,51 @@ const ResearcherApply = () => {
   const submitForm = async (e) => {
     e.preventDefault();
     const researcherData = {
-      fullName,
+      firstName,
+      lastName,      
       qualification,
       experience,
       resume,
       senderEmail,
-      phone,  
+      phone,
+      interest,
+      linkedln,  
   
     }
+    if(firstName === ""){
+      setError(true);
+    }
+    if(lastName === ""){
+      setError(true);
+    }
+    if(senderEmail === ""){
+      setError(true);
+    }
+    
     axios.post(`${serverUrl}/researcher`,  researcherData, {
     }).then((response) => {
-      setFullName("");
+      setFirstName("");
+      setLastName("")
       setQualification("");
       setExperience("");
       setResume("");
       setSenderEmail("");
       setPhone("");
+      setInterest("");
+      setLinkedln("");
       setShowFlash(response.data.message);
       setSucces(true);
+         
+        
     }).catch(error => {
       console.log(error)
     })    
     // history.push("/contact-us")
     setSucces(false);
+    
   }
-  
+  console.log(interest)
+
   return (
     <ApplyCont>
     <Background>
@@ -83,17 +128,32 @@ const ResearcherApply = () => {
           <FormControl>
           <InputField>
               <TextField
-                label="Full Name"
+                label="First Name"
                 variant="filled"
                 type="text"
                 id="text"
                 className="input"
-                value={fullName}
-                name='fullName'
-                placeholder='Please Enter Your Name...'
-                onChange={(e)=>setFullName(e.target.value)}
+                value={firstName}
+                name='firstName'
+                placeholder='Please Enter Your First Name...'
+                onChange={(e)=>setFirstName(e.target.value)}
               />
             </InputField>
+
+            <InputField>
+              <TextField
+                label="Last Name"
+                variant="filled"
+                type="text"
+                id="text"
+                className="input"
+                value={lastName}
+                name='lastName'
+                placeholder='Please Enter Your Last Name...'
+                onChange={(e)=>setLastName(e.target.value)}
+              />
+            </InputField>
+
 
             <InputField>
               <TextField
@@ -170,7 +230,30 @@ const ResearcherApply = () => {
                 </select>
               </FormOption>
             </InputField>
-          
+
+
+            <InputField>
+              <TextField
+                label="Linkedln Profile Link"
+                variant="filled"
+                type="text"
+                id="text"
+                className="input"
+                name="linkedln"
+                value={linkedln}
+                placeholder = 'Your Linkedln Profile Link'
+                onChange={(e)=>setLinkedln(e.target.value)}
+              />
+            </InputField>
+           
+          <div className="select">
+          <p className="research-interest">Select your Research Areas / Interests </p>
+          <MultiSelect
+            onChange={handleOnchange}
+            options={options}
+          />
+          </div>
+         
           </FormControl>
                   
           <InputField>
@@ -180,6 +263,11 @@ const ResearcherApply = () => {
         {
           success ? <FlashMessage message={showFlash} /> : ""
         }
+        {
+          error ? <FlashMessage message="Please check your inputs" /> : ""
+        }
+       
+         
       </Box>
     </Background>
     </ApplyCont>
