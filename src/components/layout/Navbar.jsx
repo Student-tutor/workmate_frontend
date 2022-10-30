@@ -38,7 +38,8 @@ const Navbar = (props) => {
     return (
       <Nav className={navbar ? "active" : ""}>
         <Link to="/" className='logo'>
-          <Logo src={logo} /> <h3> <span className='work-mate'>WorkMate</span></h3>
+          <Logo src={logo} /> 
+          <h3> <span className='work-mate'>Workmate</span></h3>
         </Link>
         {links}
         <Toggle onClick={handleClick} className="toggle">
@@ -70,9 +71,12 @@ const Nav = styled.div`
   }
 
   .logo {
-display: flex;
-justify-content: space-between;
-align-items: center;
+    display: flex;
+    /* justify-content: space-between;
+    align-items: center; */
+    h3{
+      margin-top: 25px;
+    }
   }
 
   a {
@@ -91,7 +95,10 @@ align-items: center;
 
 const Logo = styled.img`
 width: 50px;
-margin-right: 20px;
+margin-right: 10px;
+h3{
+    margin-top: 1.625rem;
+  }
 `;
 
 const Toggle = styled.div`

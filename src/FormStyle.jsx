@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 // Form
 
+
 export const ApplyCont = styled.div`
 padding: 20%; 
 background-image: url("./assets/images/researcherBg.jpg");
@@ -30,7 +31,7 @@ export const Background = styled.div`
 export const FormBackground = styled.div`
   width: 100%;
   height: 100vh;
-  margin-top: 15%;
+  margin-top: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -105,6 +106,30 @@ export const FormControl = styled.div`
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 50px;
   align-items: center;
+
+  .select{
+    
+        .msl {
+      overflow: hidden;
+      border: 1px solid #9c9c9c;
+        border-top-color: rgb(156, 156, 156);
+        border-right-color: rgb(156, 156, 156);
+        border-bottom-color: rgb(156, 156, 156);
+        border-left-color: rgb(156, 156, 156);
+      border-radius: var(--border-radius);
+      outline: none;
+      cursor: text;
+      transition: border-radius .2s;
+      /* width: 32rem; */
+      /* height: 50px; */
+      margin-top: 10px;
+    }
+
+    .research-interest{
+      margin-top: -10px;
+    }
+  }
+
   &.btn {
     margin-top: 5vh;
     font-size: 14px;
