@@ -9,7 +9,9 @@ background-image: url("./assets/images/researcherBg.jpg");
 background-repeat: no-repeat;
 
 @media (max-width: 900px) {
-  margin: 5%;
+  margin: 0 0;
+  margin-left: -50px;  
+  width: 100%;
 }
 `
 
@@ -17,7 +19,9 @@ export const ContactCont = styled.div`
 padding: 20%; 
 
 @media (max-width: 900px) {
-  margin: 5%;
+  margin: 0 0;
+  margin-left: -50px;  
+  width: 100%;
 }
 `
 
@@ -27,6 +31,9 @@ export const Background = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 900px) {   
+  width: 145%;
+}
 `;
 export const FormBackground = styled.div`
   width: 100%;
@@ -56,7 +63,7 @@ export const Box = styled.div`
   }
 
   @media (max-width: 900px) {
-    width: 90%;
+    width: 100%;
   }
 `;
 
@@ -66,9 +73,10 @@ export const Form = styled.form`
   grid-gap: 30px;
   margin-top: 5vh;
   @media (max-width: 900px) {
-    grid-gap: 10px;
-    margin-top: 8vh;
-    padding: 10px;
+    /* grid-gap: 10px; */
+    /* margin-top: 8vh; */
+    /* padding: 10px; */
+    
   }
 `;
 
@@ -195,5 +203,9 @@ export const Title = styled.h4`
       font-size: var(--h3);
       color: var(--Color-1);
     }
+  }
+
+  @media (max-width: 900px) {
+    font-size: 1.8rem;
   }
 `;
