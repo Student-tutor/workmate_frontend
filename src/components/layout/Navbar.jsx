@@ -67,7 +67,7 @@ const Nav = styled.div`
 
   @media (max-width: 900px) {
     height: 9vh;
-    
+    z-index: 999;
   }
 
   .logo {
