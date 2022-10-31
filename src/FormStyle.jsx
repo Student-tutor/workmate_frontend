@@ -12,7 +12,10 @@ background-repeat: no-repeat;
   margin: 0 0;
   margin-left: -50px;  
   width: 100%;
+  z-index: -1;
 }
+
+
 `
 
 export const ContactCont = styled.div`
@@ -33,6 +36,7 @@ export const Background = styled.div`
   align-items: center;
   @media (max-width: 900px) {   
   width: 145%;
+  
 }
 `;
 export const FormBackground = styled.div`
@@ -52,7 +56,6 @@ export const Box = styled.div`
   padding: 2%;
   border-radius: 10px;
   background: #ffffff;
-  z-index: 999;
   position: relative;
   box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.3);
 
