@@ -192,7 +192,7 @@ const ResearcherApply = () => {
                 >
                   <option> Qualification </option>
                   <option> Secondary </option>
-                  <option> Diploma </option>
+                  <option> Diploma/NCE </option>
                   <option> College Degree </option>
                   <option> Masters </option>
                   <option> PhD </option>                  
