@@ -1,10 +1,11 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import { Link } from 'react-router-dom'
 import showcaseImg from '../../../assets/images/heroImage.png'
 import { 
   Home, 
   Img, 
-  Showcase, 
+  Showcase,
+  ShowcasePrice, 
   ShowcaseBtn, ShowcaseContainer, 
   ShowcaseContent, ShowcaseImg, ShowcaseText, 
   ShowcaseTitle, Step, Title, Desc, Card, Focus, 
@@ -19,12 +20,28 @@ import { useAuth0 } from "@auth0/auth0-react";
 import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import CreateIcon from '@mui/icons-material/Create';
 import PieChartIcon from '@mui/icons-material/PieChart';
+import TextTransition, { presets } from "react-text-transition";
+
+const TEXTS = [
+  "Writing",
+  "Research",
+  ];
 
 // import SubjectSlider from '../../blocks/SubjectSlider'
 
 
 const HomePage = () => {
   const { loginWithRedirect, isAuthenticated } = useAuth0();
+  const [index, setIndex] = useState(0);
+
+      useEffect(() => {
+          const intervalId = setInterval(() =>
+            setIndex(index => index + 1),
+            3000 // every 3 seconds
+          );
+          return () => clearTimeout(intervalId);
+        }, []);
+
 
     return (
       <Home>
@@ -32,7 +49,19 @@ const HomePage = () => {
           <Showcase>
             <ShowcaseText>
               {/* <ShowcaseTitle>Your 24/7 Academic and Professional Work Helper</ShowcaseTitle> */}
-              <ShowcaseTitle>Connecting you to the <span>top 1%</span>  Academic Research Experts </ShowcaseTitle>
+              <ShowcaseTitle>
+                  Connecting you to the <span>top 1%</span> 
+                    <TextTransition style={{ margin: "0 8px" }} springConfig={presets.wobbly} inline>
+                      {TEXTS[index % TEXTS.length]} 
+                      {/* {texts[this.state.textFastIndex % texts.length]} */}
+                    </TextTransition>
+                  Experts, anywhere, anytime
+                </ShowcaseTitle>
+
+                <ShowcasePrice>
+                  At a standard and price you can’t get anywhere!
+                </ShowcasePrice>
+
               <ShowcaseContent>
                 {/* <p className="icon"> <FaArrowCircleRight/> Let your friend help you with any academic and professional works</p> */}
                 <p className="icon"> Join Workmate today and get expert-verified assistance on your research, so fast... </p>

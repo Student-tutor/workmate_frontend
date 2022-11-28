@@ -297,7 +297,7 @@ export const ShowcaseTitle = styled.h3`
   color: offwhite;
   @media (max-width: 900px) {
     width: 100%;
-    font-size: 2.1875rem;
+    font-size: 1.70rem;
     // width: 24rem;
   }
 
@@ -305,14 +305,35 @@ export const ShowcaseTitle = styled.h3`
     color: var(--Color-2);
   }
 `;
+
+export const ShowcasePrice = styled.p`
+ font-size: 1.825rem;
+ line-height: 24px;
+ font-weight: 600;
+ margin-top: 30px;
+ /* margin-bottom: 30px; */
+ color: #616161;
+
+   @media (max-width: 900px) {
+    width: 100%;
+    margin-bottom: 30px;
+    font-size: 24px;
+    // width: 24rem;
+  }
+ 
+`
+
+
 export const ShowcaseContent = styled.p`
   line-height: 150%;
-  font-size: 18pt;
+  font-size: 17pt;
   margin-bottom: 50px;
+   margin-top: 30px;
   width: 40rem;
   @media (max-width: 900px) {
     width: 100%;
     margin-bottom: 40px;
+     font-size: 13pt;
     // width: 24rem;
   }
 `;
@@ -342,7 +363,7 @@ export const ShowcaseBtn = styled.a`
     @media (max-width: 900px) {
       padding: 8px 16px;
       font-size: 14pt;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
       
    }    
 `;
