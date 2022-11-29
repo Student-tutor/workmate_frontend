@@ -40,6 +40,7 @@ const ResearcherApply = () => {
   const [linkedln, setLinkedln] = useState("")
   const [value, setvalue] = useState('')
   const [label, setLabel] = useState('')
+  const [submitState, setSubmitState] = useState("Submit")
 
     const  options  = [
     { label:  'Engineering', value:  'Engineering'  },
@@ -58,6 +59,14 @@ const ResearcherApply = () => {
     setInterest([e])        
   }
  
+  const handleSubmitting = () => {
+    if(error === false){
+      setSubmitState("Submitting...")
+      setError("submit");
+      
+    }
+  }
+
 
 //   const {
 //     getAccessTokenSilently,
@@ -85,12 +94,15 @@ const ResearcherApply = () => {
     }
     if(firstName === ""){
       setError(true);
+      setSubmitState("Submit")
     }
     if(lastName === ""){
       setError(true);
+      setSubmitState("Submit")
     }
     if(senderEmail === ""){
       setError(true);
+      setSubmitState("Submit")
     }
     
     axios.post(`${serverUrl}/researcher`,  researcherData, {
@@ -106,6 +118,8 @@ const ResearcherApply = () => {
       setLinkedln("");
       setShowFlash(response.data.message);
       setSucces(true);
+      setSubmitState("Submit")
+      
          
         
     }).catch(error => {
@@ -257,14 +271,16 @@ const ResearcherApply = () => {
           </FormControl>
                   
           <InputField>
-            <Input type="submit" name="submit" value="submit" className="btn" />
+            <Input type="submit" name="submit" value={submitState} className="btn" 
+            onClick={handleSubmitting}
+            />
           </InputField>
         </Form>
         {
           success ? <FlashMessage message={showFlash} /> : ""
         }
         {
-          error ? <FlashMessage message="Please check your inputs" /> : ""
+          error === true ? <FlashMessage message="Please check your inputs" /> : ""
         }
        
          
