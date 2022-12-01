@@ -20,6 +20,7 @@ import {
   ApplyCont,
 } from "../../../FormStyle";
 import { FaTimes } from "react-icons/fa";
+import Footer from "../../layout/Footer"
 
 const ResearcherApply = () => {
   const history = useHistory();
@@ -132,6 +133,7 @@ const ResearcherApply = () => {
   console.log(interest)
 
   return (
+    <>
     <ApplyCont>
     <Background>
       <Box>
@@ -287,6 +289,8 @@ const ResearcherApply = () => {
       </Box>
     </Background>
     </ApplyCont>
+    <Footer />
+    </>
   );
 };
 export default ResearcherApply;

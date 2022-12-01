@@ -32,6 +32,7 @@ import wedo from "../../../assets/images/we_do.jpg";
 import DoImage from "../../../assets/images/what-we-do.jpg";
 import Choose from "../../../assets/images/chose.jpg";
 import JoinUs from "../../../assets/images/joinUs.jpg";
+import Footer from "../../layout/Footer"
 
 import { Link } from "react-router-dom";
 
@@ -40,6 +41,7 @@ const About = () => {
 
 
   return (
+    <>
     <div>
       <ShowcaseContainer>
         <Showcase>
@@ -155,6 +157,8 @@ const About = () => {
       </Banner>
        }
     </div>
+    <Footer />
+    </>
   );
 };
 

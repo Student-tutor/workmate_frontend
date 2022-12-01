@@ -36,11 +36,7 @@ const SignedOutLinks = ({toggle}) => {
         </LinkItem>
 
         <LinkItem className='researcher'>
-          <NavLink to=""  className="btn btn-researcher" onClick={() =>
-              loginWithRedirect({
-                screen_hint: "signup",
-              })
-             } 
+          <NavLink to="/researcher/apply"  className="btn btn-researcher" 
             >
             Apply as a Researcher
           </NavLink>

@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import {AdminStyle, Modal, LinkItem} from  '../../../Styled';
 
 import SimpleDateTime  from 'react-simple-timestamp-to-date';
 import emptyState from "../../../assets/images/empty_state_home_activity.svg"
 import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
-import AdminForm from "../Admin/AdminForm";
+import AdminForm from "./AdminForm";
 
 // mui
 import Table from '@mui/material/Table';
@@ -16,8 +16,8 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 
 
-const Admin = () => {
-  const [projects, setProjects] = useState([])
+const Researchers = () => {
+  const [researchers, setResearchers] = useState([])
   const [modal, setModal] = useState(false);
  
   const {
@@ -34,22 +34,22 @@ const Admin = () => {
   const serverUrl = process.env.REACT_APP_SERVER_URL;
 
   useEffect(() => {
-    allProjects()
+    allResearchers()
   }, [])
 
-  const allProjects = async () => {
+  const allResearchers = async () => {
     try {
       const token = await getAccessTokenSilently();
       console.log(token)
       await axios.get(
-        `${serverUrl}/projects`,
+        `${serverUrl}/researcher`,
         {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         }).then((response) => {
-          const data = response.data.projects;
-          setProjects(data)
+          const data = response.data.researchers;
+          setResearchers(data)
          console.log(data)
          console.log(typeof data)
          console.log(data.userId)
@@ -62,15 +62,14 @@ const Admin = () => {
 
   
   return (
-    <>
     <AdminStyle>
-         <Link to="/researchers">
-          <p>Go to Researchers --> </p>
-        </Link>
+      < NavLink to="/admin">
+          <p>Go to Projects --> </p>
+        </NavLink>
           <p> Welcome <strong> {name}!</strong> </p>
           <div>
           <div className="btn">
-            Below are the projects and other activities on this site
+            Below are the researchers on this site
           </div>
           </div>
 
@@ -82,71 +81,62 @@ const Admin = () => {
           <TableHead className="table_head">
             <TableRow className="table_head_row">
               <TableCell >
-                Title
+                Email
               </TableCell>
               <TableCell align="right">
-                Type
+                First Name
               </TableCell>
-              <TableCell align="right">Pages</TableCell>
-              <TableCell align="right">Submission Date</TableCell>
-              <TableCell align="center">Payment</TableCell>
+              <TableCell align="right">Phone Number</TableCell>
+              <TableCell align="right">Qualification</TableCell>
+              <TableCell align="center">Resume</TableCell>
+              <TableCell align="center">Experience</TableCell>
+              <TableCell align="center">Linkedln</TableCell>
+              <TableCell align="center">Interests</TableCell>
             </TableRow>
           </TableHead>
           <TableBody classNmae="table_body">
-            {projects.length > 0 ? (
-              projects.map((project, i) => {
+            {researchers.length > 0 ? (
+              researchers.map((researcher, i) => {
                 return (
-                  <TableRow key={project._id.toString()} className="table_row">
+                  <TableRow key={researcher._id.toString()} className="table_row">
                     <TableCell component="th" scope="row">
-                      {project.title}
+                      {researcher.senderEmail}
                     </TableCell>
                     <TableCell component="th" scope="row" align="right">
-                      {project.type}
+                      {researcher.firstName}
                     </TableCell>
                     {/* <TableCell component="th" align="right"></TableCell> */}
-                    <TableCell align="right">{project.pages}</TableCell>
+                    <TableCell align="right">{researcher.phone}</TableCell>
                     <TableCell align="right">
-                    <SimpleDateTime 
-                        dateFormat="DMY" 
-                        dateSeparator="/"  
-                        timeSeparator=":"
-                        showTime="0"
-                        >
-                          {project.submissionDate}
-                    </SimpleDateTime>
+                      {researcher.qualification}
                     </TableCell>
-                  {project.isPaid == false ? 
-                  <div>
+               
                     <TableCell align="right">
-                      <button className="pay-button" onClick={openModal}>Pay</button>
+                     {researcher.resume}
                     </TableCell>
-                    <Modal className={modal ? "active" : ""}>
-                        
-                        <AdminForm openModal={openModal} />
-                      </Modal>
-                    </div>
-                    :
-                    <div>
-                    <TableCell  align="right">
-                       <button className="paid-button">Paid</button>
-                     </TableCell>
-                     </div>
-                    }
+                     <TableCell align="right">
+                     {researcher.experience}
+                    </TableCell>
+                    <TableCell align="right">
+                     {researcher.linkedln}
+                    </TableCell>
+                     <TableCell align="right">
+                     {researcher.interest}
+                    </TableCell>
                   </TableRow>
                 );
               })
             ) : (
               <div className="empty-state">
                 <img src={emptyState} />
-                <p>This is where you'll see your activity and Projects </p>
+                <p>This is where you'll see all Researchers on this site </p>
               </div>
               
             )}
           </TableBody>
         </Table>
     </AdminStyle>
-    </>
   );
 };
 
-export default Admin
+export default Researchers

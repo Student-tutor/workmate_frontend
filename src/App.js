@@ -15,6 +15,7 @@ import PaymentVerify from './components/payment/PaymentVerify'
 import PrivacyPolicy from './components/privacy/PrivacyPolicy'
 import Footer from './components/layout/Footer'
 import ResearcherForm from "./components/pages/ResearcherForm/ResearcherForm"
+import Researchers from "./components/pages/Admin/AdminResearcherList"
 
 
 function App() {
@@ -42,9 +43,10 @@ function App() {
         
         <ProtectedRoute exact path='/dashboard' component={Dashboard}/>
         <ProtectedRoute  exact path='/admin' component={Admin}/>
+        <ProtectedRoute  exact path='/researchers' component={Researchers}/>
         <ProtectedRoute exact path='/paystack/callback' component={PaymentVerify} />
       </Switch>
-      <Footer />
+      {/* <Footer /> */}
     </div>
     </Router>
   );
