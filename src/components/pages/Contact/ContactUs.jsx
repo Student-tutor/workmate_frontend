@@ -18,6 +18,7 @@ import {
   ContactCont,
 } from "../../../FormStyle";
 import { FaTimes } from "react-icons/fa";
+import Footer from "../../layout/Footer"
 
 const ContactUs = () => {
   const history = useHistory();
@@ -68,6 +69,7 @@ const ContactUs = () => {
   }
   
   return (
+    <>
     <ContactCont>
     <Background>
       <Box>
@@ -163,6 +165,8 @@ const ContactUs = () => {
       </Box>
     </Background>
     </ContactCont>
+    <Footer/>
+    </>
   );
 };
 export default ContactUs;

@@ -21,6 +21,7 @@ import LibraryBooksIcon from '@mui/icons-material/LibraryBooks';
 import CreateIcon from '@mui/icons-material/Create';
 import PieChartIcon from '@mui/icons-material/PieChart';
 import TextTransition, { presets } from "react-text-transition";
+import Footer from "../../layout/Footer"
 
 const TEXTS = [
   "Writing",
@@ -194,6 +195,7 @@ const HomePage = () => {
         <div className="accordion">
           <Accordion/>
         </div>
+        <Footer />
       </Home>
     );
 }

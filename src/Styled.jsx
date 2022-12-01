@@ -1019,17 +1019,19 @@ export const ProfileStyle = styled.div`
 
 export const AdminStyle = styled.div`
   border: 5px solid var(--Color-3);
-  margin-top: 8%;
-  margin-left: 3%;
+  margin: 8%;
+  /* margin-left: 5%;
+  margin-bottom: 8%; */
   padding: 3%;
   border-radius: 20px;
   width: 85%;
-  height: 80vh;
+  height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+
 
   .project-header {
     display: flex;
