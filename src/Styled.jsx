@@ -485,6 +485,7 @@ export const Title = styled.h4`
     &.colored {
       font-size: var(--h3);
       color: var(--Color-1);
+      text-align: center;
     }
   }
 `;
