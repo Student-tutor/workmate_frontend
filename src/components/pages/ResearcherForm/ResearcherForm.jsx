@@ -39,7 +39,7 @@ const ResearcherApply = () => {
   const [resume, setResume] = useState("")
   const [interest, setInterest] = useState([])
   const [linkedln, setLinkedln] = useState("")
-  const [value, setvalue] = useState('')
+  const [value, setValue] = useState('')
   const [label, setLabel] = useState('')
   const [submitState, setSubmitState] = useState("Submit")
 
@@ -56,7 +56,7 @@ const ResearcherApply = () => {
   ]
 
   const  handleOnchange  =  e  => {
-    setvalue(e)  
+    setValue(e)  
     setInterest([e])        
   }
  
@@ -120,7 +120,6 @@ const ResearcherApply = () => {
       setShowFlash(response.data.message);
       setSucces(true);
       setSubmitState("Submit")
-      
          
         
     }).catch(error => {

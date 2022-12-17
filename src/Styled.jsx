@@ -422,6 +422,7 @@ export const Steps = styled.div`
   width: 100%;
 `;
 export const About = styled.div`
+margin-bottom: -80px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -430,6 +431,7 @@ export const About = styled.div`
 
   @media (max-width: 900px) {
     flex-direction: column;
+    margin-bottom: 0px;
   }
 `;
 export const AboutText = styled.div`
@@ -1072,4 +1074,60 @@ margin: 20%;
 @media (max-width: 900px) {
   margin: 5%;
 }
+`
+
+export const Testimonial = styled.div`
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  text-align; center;
+  padding: 1% 12%;
+  /* width: 80%; */
+
+  .head{
+    text-align: center;
+    h2{
+      font-size: var(--h1);
+    color: var(--Color-1);
+    }
+    h3{
+      font-size: 28px;
+    }
+  }
+  .test-cont{
+    display: flex;
+    justify-content: start;
+    text-align: center;
+    /* padding: 2%; */
+    .tests{
+      padding: 2% 4%;
+      p{
+        line-height: 28px;
+      }
+      .customer{
+        margin-top: 1.25rem;
+      }
+    }
+  }
+ @media (max-width: 900px) {
+ .head{
+    text-align: center;
+    h2{
+      font-size: var(--h3);
+    color: var(--Color-1);
+    }
+    h3{
+      font-size: 19px;
+    }
+  } 
+  .test-cont{
+    margin-bottom: 30px;
+    flex-direction: column;
+
+    .tests{
+      margin-top: 20px;
+    }
+  }
+  }
+
 `
