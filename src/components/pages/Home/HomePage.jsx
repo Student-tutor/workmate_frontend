@@ -205,7 +205,7 @@ const HomePage = () => {
                 I will like to work with Workmate again in the future.
              </p>
               <div className='customer'>
-                <h5> Aminu Labaran MuhammadAminu</h5>
+                <h5> Aminu Labaran Muhammad</h5>
                 <p>Process Engineer at Dangote oil refinery and petrochemical company</p>
               </div>
             </div>
