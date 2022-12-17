@@ -10,7 +10,7 @@ import {
   ShowcaseContent, ShowcaseImg, ShowcaseText, 
   ShowcaseTitle, Step, Title, Desc, Card, Focus, 
   FocusImg, FocusText, Steps, About, AboutText, 
-  AboutCards, ShowcaseButtons, ShowcaseBtnResearcher } from '../../../Styled'
+  AboutCards, ShowcaseButtons, ShowcaseBtnResearcher, Testimonial } from '../../../Styled'
 
 import focus from '../../../assets/images/focus.png'
 import Accordion from '../../blocks/Accordion'
@@ -191,7 +191,47 @@ const HomePage = () => {
                    }
           </FocusText>
         </Focus>
+        <Testimonial>
+          <div className='head'>
+            <h2>Our Customers</h2>
+            <h3>Testimonials</h3>
+          </div>
+         
+          <div className='test-cont'>
+            <div className='tests'>
+              <p> Workmate's quality of writing is exceptional. 
+                It shows indepth research and understanding of the subject matter. 
+                Their writings posses all the qualities that a good writing should have. 
+                I will like to work with Workmate again in the future.
+             </p>
+              <div className='customer'>
+                <h5> Aminu Labaran MuhammadAminu</h5>
+                <p>Process Engineer at Dangote oil refinery and petrochemical company</p>
+              </div>
+            </div>
 
+            <div className='tests'>
+              <p>
+                Workmate Team is very exceptional in what they do. 
+                The team is also very good when it comes to communication and always tries to find a way out of a problem
+             </p>
+              <div className='customer'>
+                <h5> Umar Muhammad Zakari</h5>
+                <p>CEO, Escrow Africa</p>
+              </div>
+            </div>
+
+            <div className='tests'>
+              <p> Workmate's way of service delivery is very professional. 
+                With a team of writing and research experts, I don't have any regret working with them. 
+             </p>
+              <div className='customer'>
+                <h5>Happiness Skutta</h5>
+                <p>Thomas More University of Applied Sciences</p>
+              </div>
+            </div>
+          </div>
+        </Testimonial>
         <div className="accordion">
           <Accordion/>
         </div>
