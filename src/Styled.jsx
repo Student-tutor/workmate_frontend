@@ -470,6 +470,7 @@ export const Title = styled.h4`
 
   &.title {
     font-size: var(--h1);
+    color: var(--Color-1);
   }
 
   &.colored {
