@@ -189,7 +189,8 @@ export const Title = styled.h4`
   margin-bottom: 20px;
 
   &.title {
-    font-size: var(--h1);
+    font-size: var(--h2);
+    color: var(--Color-1);
   }
 
   &.colored {

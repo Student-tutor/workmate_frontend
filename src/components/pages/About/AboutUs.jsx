@@ -77,18 +77,23 @@ const About = () => {
       <WhoWeAre className="who">
         <Title className="title">Who we are</Title>
         <Desc className="desc">
-          Having understood different challenges that students face during their studies; trying to complete course work, research work, assessments and exams, 
-          Ibrahim leveraged his research and writing expertise and started offering supports to students. This began in 2014 when he was a student at Bayero University Kano, Nigeria. 
+          Having understood different challenges that students face during their studies; 
+          trying to complete course work, research work, assessments and exams, 
+          Ibrahim leveraged his research and writing expertise and started offering supports to students. 
+          This began in 2014 when he was a student at Bayero University Kano, Nigeria.
         </Desc>
-        <Desc className="desc">
-          To take the support to a wider range of students and researchers across the world, he founded Workmate in 2021 and since then, Workmate has worked with several clients across different Universities, locations and domains. 
-          WorkMate is group of experts that is ever ready to help you get passed all troubles attached to academic and professional life.
+         <Desc className="desc">
+          To take the support to a wider range of students and researchers across the world, 
+          he founded Workmate in 2021 and since then, Workmate has worked with several clients 
+          across different Universities, locations and domains. 
+          WorkMate is group of experts that is ever ready to help you get 
+          passed all troubles attached to academic and professional life.
         </Desc>
-      </WhoWeAre>
+       </WhoWeAre> 
       <WhatWeDo>
         <WhatWeDoText>
           <Title className="title">WHAT WE DO</Title>
-          <SubTitle>We conduct research, we write and we support.</SubTitle>
+          <SubTitle>We conduct research, we write and we help.</SubTitle>
           <Desc className="desc">
             We allow you to focus on the main work. 
             We would go through all the stress and get you best quality results 

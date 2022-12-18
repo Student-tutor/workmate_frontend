@@ -136,7 +136,7 @@ const ResearcherApply = () => {
     <ApplyCont>
     <Background>
       <Box>
-        <Title>Are you a researcher? Apply here!</Title>
+        <Title className="title">Are you a Writer/Researcher? Apply here!</Title>
         <p>Fill the form below if you are a researcher, writer or data analyst </p>
         <p>You can as well fill the form if you are interested in becoming one.</p>
         <Form onSubmit={submitForm}>

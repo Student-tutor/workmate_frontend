@@ -73,7 +73,7 @@ const ContactUs = () => {
     <ContactCont>
     <Background>
       <Box>
-        <Title>How can we help you ?</Title>
+        <Title className="title">How can we help you ?</Title>
         <Form onSubmit={submitForm}>
           <FormControl>
             
