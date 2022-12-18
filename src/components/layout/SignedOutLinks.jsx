@@ -4,20 +4,20 @@ import { useAuth0 } from "@auth0/auth0-react";
 import styled from "styled-components";
 
 
-const SignedOutLinks = ({toggle}) => {
+const SignedOutLinks = ({toggle, setToggle}) => {
   const { loginWithRedirect } = useAuth0();
 
     return (
       <Links className={toggle ? "active" : ""}>
-        <LinkItem>
-          <NavLink to="/about-us">About Us</NavLink>
+        <LinkItem >
+          <NavLink onClick={() => setToggle(!toggle)} to="/about-us">About Us</NavLink>
         </LinkItem>
         
         <LinkItem>
-          <NavLink to="/contact-us">Contact Us</NavLink>
+          <NavLink onClick={() => setToggle(!toggle)} to="/contact-us">Contact Us</NavLink>
         </LinkItem>
 
-        <LinkItem>
+        <LinkItem >
           <NavLink to="" 
             onClick={() => loginWithRedirect()} 
             >Sign In
@@ -35,7 +35,7 @@ const SignedOutLinks = ({toggle}) => {
           </NavLink>
         </LinkItem>
 
-        <LinkItem className='researcher'>
+        <LinkItem className='researcher' onClick={() => setToggle(!toggle)}>
           <NavLink to="/researcher/apply"  className="btn btn-researcher" 
             >
             Apply as a Researcher

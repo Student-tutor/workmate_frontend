@@ -48,11 +48,11 @@ const About = () => {
           <ShowcaseText>
             <ShowcaseTitle>WorkMate is for Students and Researchers</ShowcaseTitle>
             <ShowcaseContent>
-              Workmate connects you to the top 1% academic research experts. We helps you by taken care of all hassles that is attached to academic and professional related works; 
+              Workmate connects you to the top 1% Research and Writing experts. We helps you by taken care of all hassles that is attached to academic and professional related works; 
               from <b>Research</b> to <b>Technical writing</b> to <b>Programming</b>.
             </ShowcaseContent>
             <ShowcaseContent>
-              Allowing you to focus on what really matters!
+              Allowing you to fully focus on other key areas!
             </ShowcaseContent>
             {!isAuthenticated &&
             <ShowcaseBtn className="btn"
@@ -77,13 +77,18 @@ const About = () => {
       <WhoWeAre className="who">
         <Title className="title">Who we are</Title>
         <Desc className="desc">
-          WorkMate is group of exparts that is ever ready to help you get passed all troubles attached to academic and professional life.
+          Having understood different challenges that students face during their studies; trying to complete course work, research work, assessments and exams, 
+          Ibrahim leveraged his research and writing expertise and started offering supports to students. This began in 2014 when he was a student at Bayero University Kano, Nigeria. 
+        </Desc>
+        <Desc className="desc">
+          To take the support to a wider range of students and researchers across the world, he founded Workmate in 2021 and since then, Workmate has worked with several clients across different Universities, locations and domains. 
+          WorkMate is group of experts that is ever ready to help you get passed all troubles attached to academic and professional life.
         </Desc>
       </WhoWeAre>
       <WhatWeDo>
         <WhatWeDoText>
           <Title className="title">WHAT WE DO</Title>
-          <SubTitle>We conduct research, we write and we help.</SubTitle>
+          <SubTitle>We conduct research, we write and we support.</SubTitle>
           <Desc className="desc">
             We allow you to focus on the main work. 
             We would go through all the stress and get you best quality results 
@@ -91,7 +96,7 @@ const About = () => {
 
             <p>
               What matter to us is that unique result that will make your work
-              the best of its kind. This is what we are here for! 
+              the best of its kind. This is what we stand for! 
             </p>
           </Desc>
         </WhatWeDoText>

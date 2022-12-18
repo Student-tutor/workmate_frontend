@@ -13,13 +13,17 @@ const Navbar = (props) => {
   const [toggle, setToggle] = useState(false);
     const [navbar, setNavbar] = useState(false)
 
+     const handleToggle = () => {
+        setToggle(!toggle);
+      };
+
     const { isAuthenticated } = useAuth0();
 
     const links = isAuthenticated ? 
     <AfterSignIn>
-      <SignedInLinks toggle={toggle} />
+      <SignedInLinks toggle={toggle} handleClick ={handleToggle} setToggle={setToggle} />
       </AfterSignIn>  : 
-    <SignedOutLinks toggle={toggle} />;
+    <SignedOutLinks toggle={toggle} handleClick ={handleToggle} setToggle={setToggle} />;
 
     // const changeBackground = () => {
     //     if(window.scrollY >= 80) {
@@ -31,9 +35,6 @@ const Navbar = (props) => {
 
   // window.addEventListener("scroll", changeBackground)
   
-  const handleClick = () => {
-    setToggle(!toggle);
-  };
 
     return (
       <Nav className={navbar ? "active" : ""}>
@@ -42,7 +43,7 @@ const Navbar = (props) => {
           <h3> <span className='work-mate'>Workmate</span></h3>
         </Link>
         {links}
-        <Toggle onClick={handleClick} className="toggle">
+        <Toggle onClick={handleToggle} className="toggle">
           {toggle ? <CgClose /> : <CgMenuMotion />}
         </Toggle>
       </Nav>
