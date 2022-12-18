@@ -1,10 +1,17 @@
 import React from "react";
+import styled from "styled-components";
 import loading from "../../assets/images/loading.svg";
 
 const Loading = () => (
-  <div className="spinner">
+  <Spinner >
     <img src={loading} alt="Loading" />
-  </div>
+  </Spinner>
 );
+
+const Spinner = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`
 
 export default Loading;

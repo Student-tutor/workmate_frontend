@@ -113,7 +113,7 @@ const HomePage = () => {
             while carrying you along through all the processes.
             <p>
               What matter to us is that unique result that will make your work
-              the best of its kind. This is what we are here for! 
+              the best of its kind.
             </p>
             </Desc>
           </AboutText>
@@ -199,14 +199,12 @@ const HomePage = () => {
          
           <div className='test-cont'>
             <div className='tests'>
-              <p> Workmate's quality of writing is exceptional. 
-                It shows indepth research and understanding of the subject matter. 
-                Their writings posses all the qualities that a good writing should have. 
-                I will like to work with Workmate again in the future.
+              <p> Workmate's way of service delivery is very professional. 
+                With a team of writing and research experts, I don't have any regret working with them.
              </p>
               <div className='customer'>
-                <h5> Aminu Labaran Muhammad</h5>
-                <p>Process Engineer at Dangote oil refinery and petrochemical company</p>
+                <h5>Happiness Skutta</h5>
+                <p>Thomas More University of Applied Sciences, Belgium</p>
               </div>
             </div>
 
@@ -222,12 +220,15 @@ const HomePage = () => {
             </div>
 
             <div className='tests'>
-              <p> Workmate's way of service delivery is very professional. 
-                With a team of writing and research experts, I don't have any regret working with them. 
+              <p>  
+                Workmate's quality of writing is exceptional. 
+                It shows indepth research and understanding of the subject matter. 
+                Their writings posses all the qualities that a good writing should have. 
+                I will like to work with Workmate again in the future.
              </p>
               <div className='customer'>
-                <h5>Happiness Skutta</h5>
-                <p>Thomas More University of Applied Sciences</p>
+                <h5>Aminu Labaran Muhammad</h5>
+                <p>Process Engineer, Dangote Oil Refinery and Petrochemical Company, Nigeria</p>
               </div>
             </div>
           </div>

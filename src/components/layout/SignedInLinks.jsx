@@ -17,7 +17,7 @@ import styled from "styled-components";
 // import { Logo } from "../../Styled";
 //
 
-const SignedInLinks = ({ toggle }) => {
+const SignedInLinks = ({ toggle, setToggle }) => {
   const { logout, user } = useAuth0();
   const { name, picture, email } = user;
 
@@ -34,14 +34,14 @@ const SignedInLinks = ({ toggle }) => {
 
   return (
     <Links className={toggle ? "active" : ""}>
-      <LinkItem>
-        <NavLink to="/">Home</NavLink>
+      <LinkItem >
+        <NavLink onClick={() => setToggle(!toggle)} to="/">Home</NavLink>
       </LinkItem>
       <LinkItem>
-        <NavLink to="/about-us">About Us</NavLink>
+        <NavLink onClick={() => setToggle(!toggle)} to="/about-us">About Us</NavLink>
       </LinkItem>
       <LinkItem>
-        <NavLink to="/contact-us">Contact Us</NavLink>
+        <NavLink onClick={() => setToggle(!toggle)} to="/contact-us">Contact Us</NavLink>
       </LinkItem>
       <LinkItem>
         <NavLink
