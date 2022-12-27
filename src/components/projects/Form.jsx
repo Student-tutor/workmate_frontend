@@ -69,7 +69,7 @@ const ProjectForm = ({openModal}) => {
       submissionDate,
       file,
     };
-    axios.post(`${serverUrl}/projects`, projectData, {
+    axios.post(`api/projects`, projectData, {
       headers: {
         Authorization: `Bearer ${token}`,
       },
