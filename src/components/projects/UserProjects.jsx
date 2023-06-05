@@ -62,7 +62,6 @@ const UserProjects = (props) => {
       console.log(error)
     }  
   };
-  console.log(projects?.[0]?.isPaid)
 
   return (
     <GetUserProjects>
