@@ -26,6 +26,7 @@ const ProjectForm = ({openModal, setModal}) => {
   const history = useHistory();
   const [successModal, setSuccessModal] = useState(false);
   const [projects, setProjects] = useState([])
+  const [loading, setLoading] = useState("submit")
 
   const toggleModal = () => {
     setSuccessModal(!successModal);
@@ -71,6 +72,7 @@ const ProjectForm = ({openModal, setModal}) => {
       submissionDate,
       file,
     };
+    setLoading("Loading..");
     axios.post(`${serverUrl}/projects`, projectData, {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -240,7 +242,7 @@ const ProjectForm = ({openModal, setModal}) => {
             </InputField>
           </FormControl>
           <InputField>
-            <Input type="submit" name="submit" value="submit" className="btn" />
+            <Input type="submit" name="submit" value={loading} className="btn" />
           </InputField>
         </Form>
         {/* {
