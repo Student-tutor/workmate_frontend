@@ -37,30 +37,30 @@ const UserProjects = (props) => {
     setModal(!modal);
   };
 
-  useEffect(() => {
-    userProjects()
-  }, [])
+  // useEffect(() => {
+  //   userProjects()
+  // }, [])
   
 
-  const userProjects = async () => {
-    try {
-      const token = await getAccessTokenSilently();
-      await axios.get(
-        `${serverUrl}/projects/user`,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }).then((response) => {
-          const data = response.data.projects;
-          setProjects(data)
-         console.log(response.data.projects)
-         console.log(response.data.projects.paymentDetails)
-        })
-    } catch (error) {
-      console.log(error)
-    }  
-  };
+  // const userProjects = async () => {
+  //   try {
+  //     const token = await getAccessTokenSilently();
+  //     await axios.get(
+  //       `${serverUrl}/projects/user`,
+  //       {
+  //         headers: {
+  //           Authorization: `Bearer ${token}`,
+  //         },
+  //       }).then((response) => {
+  //         const data = response.data.projects;
+  //         setProjects(data)
+  //        console.log(response.data.projects)
+  //        console.log(response.data.projects.paymentDetails)
+  //       })
+  //   } catch (error) {
+  //     console.log(error)
+  //   }  
+  // };
 
   return (
     <GetUserProjects>
