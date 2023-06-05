@@ -87,6 +87,7 @@ const ProjectForm = ({openModal, setModal}) => {
       setSubmissionDate("");
       setShowFlash(response.data.message);
       setSucces(true);
+      setLoading("submit");
     }).catch(err => console.log(err))  
     setSucces(false);
   };
