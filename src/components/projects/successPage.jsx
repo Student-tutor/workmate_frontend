@@ -18,9 +18,10 @@ import {
 import { FaTimes } from "react-icons/fa";
 
 const ProjectForm = ({toggleModal, openModal}) => {
-
+    const history = useHistory();
+    
   const reloadAfterClose = () => {
-    // history.push("/dashboard") 
+    history.push("/dashboard") 
     window.open("https://wa.link/dn86e0");
     toggleModal();
     openModal();
