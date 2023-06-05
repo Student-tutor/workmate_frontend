@@ -18,6 +18,23 @@ import TableCell from '@mui/material/TableCell';
 // import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
+// import Paper from '@mui/material/Paper';
+
+//
+
+// const style = { 
+//   width: "14rem"
+// };
+
+// const search = {
+//    height: "60px" 
+// }
+
+
+// mui
+
+//
+
 
 const UserProjects = (props) => {
   const [projects, setProjects] = useState([])
@@ -37,30 +54,31 @@ const UserProjects = (props) => {
     setModal(!modal);
   };
 
-  // useEffect(() => {
-  //   userProjects()
-  // }, [])
-  
+  useEffect(() => {
+    userProjects()
+  }, [])
 
-  // const userProjects = async () => {
-  //   try {
-  //     const token = await getAccessTokenSilently();
-  //     await axios.get(
-  //       `${serverUrl}/projects/user`,
-  //       {
-  //         headers: {
-  //           Authorization: `Bearer ${token}`,
-  //         },
-  //       }).then((response) => {
-  //         const data = response.data.projects;
-  //         setProjects(data)
-  //        console.log(response.data.projects)
-  //        console.log(response.data.projects.paymentDetails)
-  //       })
-  //   } catch (error) {
-  //     console.log(error)
-  //   }  
-  // };
+  const userProjects = async () => {
+    try {
+      const token = await getAccessTokenSilently();
+      // console.log(token)
+      await axios.get(
+        `${serverUrl}/projects/user`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }).then((response) => {
+          const data = response.data.projects;
+          setProjects(data)
+         console.log(response.data.projects)
+         console.log(response.data.projects.paymentDetails)
+        })
+    } catch (error) {
+      console.log(error)
+    }  
+  };
+  // console.log(projects?.[0]?.isPaid)
 
   return (
     <GetUserProjects>
