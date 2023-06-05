@@ -25,6 +25,8 @@ import { FaTimes } from "react-icons/fa";
 const ProjectForm = ({openModal, setModal}) => {
   const history = useHistory();
   const [successModal, setSuccessModal] = useState(false);
+  const [projects, setProjects] = useState([])
+
   const toggleModal = () => {
     setSuccessModal(!successModal);
   };
@@ -92,12 +94,37 @@ const ProjectForm = ({openModal, setModal}) => {
   }
 
   useEffect(() => {
-    if(success){
+    if(success === true){
       setSuccessModal(true);
       // openModal();
       // setModal(false)
     }
   }, [success])
+
+  useEffect(() => {
+    if(success === true){
+      userProjects()
+    }
+  }, [success])
+
+  const userProjects = async () => {
+    try {
+      const token = await getAccessTokenSilently();
+      await axios.get(
+        `${serverUrl}/projects/user`,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }).then((response) => {
+          const data = response.data.projects;
+          setProjects(data)
+         console.log(response.data.projects)
+        })
+    } catch (error) {
+      console.log(error)
+    }  
+  };
   
   return (
     <Background>
