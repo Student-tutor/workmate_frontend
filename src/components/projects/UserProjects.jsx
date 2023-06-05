@@ -45,7 +45,6 @@ const UserProjects = (props) => {
   const userProjects = async () => {
     try {
       const token = await getAccessTokenSilently();
-      console.log(token)
       await axios.get(
         `${serverUrl}/projects/user`,
         {
