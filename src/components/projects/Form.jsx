@@ -240,7 +240,7 @@ const ProjectForm = ({openModal, setModal}) => {
             </InputField>
           </FormControl>
           <InputField>
-            <Input onClick={handleSuccess} type="submit" name="submit" value="submit" className="btn" />
+            <Input type="submit" name="submit" value="submit" className="btn" />
           </InputField>
         </Form>
         {/* {
