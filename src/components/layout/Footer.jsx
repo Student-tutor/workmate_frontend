@@ -32,7 +32,7 @@ export default function Footer() {
               <Box marginBottom={1}> Shop 4, Student Union Secretariat, BUK New Campus,
                 Bayero University Kano, Nigeria. </Box>
               <Box marginTop={2} className='adress-text'> <EmailIcon/> people@workmateteam.com </Box>
-              <Box marginTop={2} className='adress-text'> <CallIcon/> <WhatsAppIcon/> +2348059303261</Box>
+              <Box marginTop={2} className='adress-text'> <CallIcon/> <WhatsAppIcon/> +2348068773801</Box>
             </Grid>
             <Grid item xs={12} sm={3}>
               <Box borderBottom={1} marginBottom={1}> <b>Company</b></Box>

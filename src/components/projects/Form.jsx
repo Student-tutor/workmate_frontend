@@ -4,7 +4,8 @@ import { useAuth0 } from "@auth0/auth0-react";
 import axios from "axios";
 import moment from "moment";
 import TextField from "@mui/material/TextField";
-import FlashMessage from "../layout/FlashMessage"
+import FlashMessage from "../layout/FlashMessage";
+import SuccessModal from "./successPage";
 
 // import { formElements } from './FormElements'
 
@@ -17,21 +18,20 @@ import {
   FormControl,
   InputField,
   Input,
+  Modal,
 } from "../../Styled";
 import { FaTimes } from "react-icons/fa";
 
-const ProjectForm = ({openModal}) => {
+const ProjectForm = ({openModal, setModal}) => {
   const history = useHistory();
-  // const [state, setState] = useState({
-  //   title: "",
-  //   type: "",
-  //   content: "",
-  //   pages: "",
-  //   phoneNumber: "",
-  //   email: "",
-  //   submissionDate: "",
-  //   // file: null,
-  // })
+  const [successModal, setSuccessModal] = useState(false);
+  const toggleModal = () => {
+    setSuccessModal(!successModal);
+  };
+
+  const handleSuccess = () => {
+    setSucces(true)
+  }
 
   const {
     getAccessTokenSilently,
@@ -90,6 +90,14 @@ const ProjectForm = ({openModal}) => {
   const reloadAfterClose = () => {
     history.push("/dashboard") 
   }
+
+  useEffect(() => {
+    if(success){
+      setSuccessModal(true);
+      // openModal();
+      // setModal(false)
+    }
+  }, [success])
   
   return (
     <Background>
@@ -205,13 +213,16 @@ const ProjectForm = ({openModal}) => {
             </InputField>
           </FormControl>
           <InputField>
-            <Input type="submit" name="submit" value="submit" className="btn" />
+            <Input onClick={handleSuccess} type="submit" name="submit" value="submit" className="btn" />
           </InputField>
         </Form>
-        {
+        {/* {
           success ? <FlashMessage message={showFlash} /> : ""
-        }
+        } */}
       </Box>
+      <Modal className={successModal ? "active" : ""}>
+          <SuccessModal toggleModal={toggleModal} openModal={openModal} />
+      </Modal>
     </Background>
   );
 };

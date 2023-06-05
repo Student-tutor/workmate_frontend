@@ -19,7 +19,7 @@ const Createproject = () => {
 
         <Modal className={modal ? "active" : ""}>
           
-          <ProjectForm openModal={openModal} />
+          <ProjectForm openModal={openModal} setModal={setModal}/>
         </Modal>
       </div>
     </Cp>

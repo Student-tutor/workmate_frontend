@@ -78,7 +78,7 @@ const UserProjects = (props) => {
       console.log(error)
     }  
   };
-
+  console.log(projects?.[0]?.isPaid)
 
   return (
     <GetUserProjects>
@@ -103,7 +103,7 @@ const UserProjects = (props) => {
           </TableHead>
           <TableBody classNmae="table_body">
             {projects.length > 0 ? (
-              projects.map((project, i) => {
+              projects?.slice().reverse().map((project, i) => {
                 return (
                   <TableRow key={project._id.toString()} className="table_row">
                     <TableCell component="th" scope="row">
@@ -124,7 +124,7 @@ const UserProjects = (props) => {
                           {project.submissionDate}
                     </SimpleDateTime>
                     </TableCell>
-                  {project.isPaid == false ? 
+                  {project?.isPaid === false ? 
                   <div>
                     <TableCell align="right">
                       <button className="pay-button" onClick={openModal}>Pay</button>

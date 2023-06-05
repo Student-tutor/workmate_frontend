@@ -29,7 +29,6 @@ export const Box = styled.div`
   position: relative;
   box-shadow: 0 2px 3px 2px rgba(0, 0, 0, 0.3);
 
-
   .close {
     z-index: 999;
     color: #000;
@@ -37,6 +36,31 @@ export const Box = styled.div`
 
   @media (max-width: 900px) {
     width: 90%;
+  }
+`;
+
+export const SuccessBox = styled.div`
+  background: #ffffff;
+  z-index: 999;
+  height: 70%;
+  width: 40%;
+  line-height: 26px;
+  padding: 4%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+
+  h2{
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  h3{
+    font-size: 18px;
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 30px;
   }
 `;
 
@@ -89,6 +113,7 @@ export const FormControl = styled.div`
   &.btn {
     margin-top: 5vh;
     font-size: 14px;
+    cursor: pointer;
   }
 
   @media (max-width: 600px) {
@@ -121,6 +146,7 @@ export const Input = styled.input`
   background: #fff;
   &.btn {
     font-size: 18px;
+    cursor: pointer;
     &:hover {
       background-color: var(--Color-2);
     }
@@ -746,6 +772,7 @@ export const BannerText = styled.div`
     margin-top: 30px;
     border-radius: 50px;
     color: #fff;
+    cursor: pointer;
   }
 `;
 export const BannerImg = styled.div`
@@ -790,6 +817,7 @@ export const Cp = styled.div`
     color: #fff;
     padding: 10px 25px;
     border-radius: 50px;
+    cursor: pointer;
   }
 
   @media (max-width: 900px) {
@@ -921,6 +949,7 @@ export const GetUserProjects = styled.div`
 
   .pay-button{
     margin-left: 15px !important;
+    cursor: pointer;
   }
 
   .empty-state {
