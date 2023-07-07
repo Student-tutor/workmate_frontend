@@ -36,7 +36,7 @@ const ProjectForm = ({toggleModal, openModal}) => {
         }} onClickCapture={reloadAfterClose}>
         <FaTimes/>
       </button> */}
-      <h2>Submission is succesfful! </h2>
+      <h2>Submission is successful! </h2>
         <h3>Talk to the Team to get your quote and for speedy attention, Thank you. </h3>
         <ShowcaseBtn onClick={reloadAfterClose} className="btn">
             Chat the Team
